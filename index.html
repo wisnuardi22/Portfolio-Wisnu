@@ -729,7 +729,7 @@
               onclick="openGallery('EduTax UNY')"
             >
               <img
-                src="EduTax1.png"
+                src="image/EduTax1.png"
                 alt="EduTax UNY - Coretax Learning Platform"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -743,6 +743,7 @@
                 </span>
               </div>
             </div>
+
             <div class="p-8 flex-1 flex flex-col justify-between">
               <div>
                 <div
@@ -757,13 +758,30 @@
                 </h4>
                 <p
                   class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_telkom_desc"
+                  data-i18n="proj_edutax_desc"
                 >
-                  an educational web application designed to help university students learn and simulate Indonesia's Coretax tax administration procedures through an interactive digital learning environment.
+                  An educational web application designed to help university students
+                  learn and simulate Indonesia's Coretax tax administration procedures
+                  through an interactive digital learning environment.
                 </p>
+              </div>
+
+              <div class="flex gap-2 mt-4 flex-wrap">
+                <span
+                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                  >HTML</span
+                >
+                <span
+                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                  >Coretax</span
+                >
+              </div>
             </div>
           </div>
-          
 
           <!-- Project 6 -->
          <div
@@ -1319,7 +1337,7 @@
         CertifiedIBM: ["image/IBM.jpg"],
         CertifiedSS: ["image/Softskill.jpg"],
         CertifiedHS: ["image/Hardskill.jpg"],
-        EduTax UNY: ["EduTax1.png", "EduTax2.png", "EduTax3.png"],
+        "EduTax UNY": ["image/EduTax1.png", "image/EduTax2.png", "image/EduTax3.png"],
       };
 
       let currentProject = "";
@@ -1395,8 +1413,8 @@
       let currentProfileIndex = 0;
       const totalProfileImages = 2;
       const profileSlider = document.getElementById("profile-slider");
-      $dot0 = document.getElementById("dot-0");
-      $dot1 = document.getElementById("dot-1");
+      const $dot0 = document.getElementById("dot-0");
+      const $dot1 = document.getElementById("dot-1");
 
       function updateProfileSlider() {
         profileSlider.style.transform = `translateX(-${currentProfileIndex * 100}%)`;
