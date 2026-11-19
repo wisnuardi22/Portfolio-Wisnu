@@ -538,7 +538,8 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 @media (max-width: 720px) {
   .brand__name { font-size: 0.76rem; letter-spacing: 0.1em; }
   .tool-btn { min-width: 2.5rem; min-height: 2.5rem; }
-  .link-arrow { padding-block: 0.35rem; }
+  .link-arrow { padding-block: 0.6rem; min-height: 2.75rem; align-items: center; }
+  .eyebrow { font-size: 0.68rem; letter-spacing: 0.12em; }
   .hero__meta { flex-direction: column; align-items: flex-start; gap: 0.45rem; }
   .hero__meta span + span::before { content: none; margin: 0; }
 }
@@ -546,5 +547,7 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 @media (max-width: 420px) {
   .facts div { grid-template-columns: 1fr; gap: 0.15rem; }
   .hero__meta { font-size: 0.76rem; }
+  .eyebrow { font-size: 0.64rem; letter-spacing: 0.1em; gap: 0.5rem; }
+  .eyebrow::before { width: 1.1rem; }
   .brand__name { font-size: 0.7rem; letter-spacing: 0.08em; }
 }
