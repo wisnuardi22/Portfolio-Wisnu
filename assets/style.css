@@ -178,7 +178,7 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
   font-size: 0.78rem; letter-spacing: 0.02em; color: var(--muted);
 }
 .hero__meta span { display: inline-flex; align-items: center; gap: 0.45rem; }
-.hero__meta span + span::before { content: "·"; margin-right: 0.55rem; color: var(--line-strong); }
+.hero__meta span + span::before { content: "·"; margin-right: 0.5rem; color: var(--line-strong); }
 .hero__meta b { font-weight: 500; color: var(--ink-soft); }
 .dot-live {
   width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
@@ -480,13 +480,9 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 }
 
 /* ---------- 15. Motion ---------- */
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1); }
-.reveal.is-in { opacity: 1; transform: none; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
 }
 
 /* ---------- 16. Responsive ---------- */

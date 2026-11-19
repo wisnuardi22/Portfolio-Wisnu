@@ -107,7 +107,7 @@
       <!-- ============ HERO ============ -->
       <section class="hero" id="top">
         <div class="wrap hero__grid">
-          <div class="reveal">
+          <div>
             <p class="eyebrow" data-i18n="hero_eyebrow">Accounting · Finance · Data Analytics</p>
             <h1 data-i18n="hero_title">Turning complex financial data into reports that stay <em>clear</em>.</h1>
             <p class="hero__lede" data-i18n="hero_lede">
@@ -131,7 +131,7 @@
             </div>
           </div>
 
-          <figure class="portrait reveal">
+          <figure class="portrait">
             <div class="portrait__frame">
               <div class="portrait__slide" id="profile-slider">
                 <img src="assets/img/fotowisnu-thumb.webp" alt="Wisnu Ardi Nugroho" width="900" height="1125" fetchpriority="high" decoding="async" />
@@ -981,25 +981,6 @@
             { rootMargin: '-45% 0px -50% 0px' }
           );
           sections.forEach((s) => spy.observe(s));
-        }
-
-        // Gentle reveal on scroll
-        const items = document.querySelectorAll(".reveal");
-        if ("IntersectionObserver" in window) {
-          const io = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("is-in");
-                  io.unobserve(entry.target);
-                }
-              });
-            },
-            { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
-          );
-          items.forEach((el) => io.observe(el));
-        } else {
-          items.forEach((el) => el.classList.add("is-in"));
         }
       });
     </script>
