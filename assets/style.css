@@ -96,11 +96,13 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
   border-bottom: 1px solid var(--line);
 }
 .site-header__inner {
-  display: flex; align-items: center; justify-content: space-between;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
   gap: 1.5rem; min-height: 4.25rem;
 }
+.site-header__inner > .nav { justify-self: center; }
+.site-header__inner > .tools { justify-self: end; }
 
-.brand { display: flex; align-items: baseline; gap: 0.6rem; }
+.brand { display: flex; align-items: baseline; gap: 0.75rem; justify-self: start; }
 .brand__name {
   font-size: 0.86rem; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase;
@@ -514,6 +516,7 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 }
 
 @media (max-width: 720px) {
+  .site-header__inner { grid-template-columns: 1fr auto; }
   .nav { display: none; }
   .menu-btn { display: inline-flex; }
   .brand__role { display: none; }
