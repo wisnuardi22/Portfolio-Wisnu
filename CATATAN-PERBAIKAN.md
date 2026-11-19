@@ -1,0 +1,86 @@
+# Catatan Perbaikan — Portfolio-Wisnu
+
+Tanggal: 19 November 2026
+
+Semua perubahan sudah diuji di browser (desktop 1440px, mobile 390px, mode terang & gelap,
+lightbox galeri). Tidak ada error console, tidak ada gambar rusak, tidak ada scroll horizontal.
+
+## Yang diperbaiki
+
+### 1. Navigasi mobile (paling penting)
+- Sebelumnya: link nav `hidden md:flex` tanpa pengganti → di HP tidak ada navigasi sama sekali.
+- Sekarang: tombol hamburger (`#menu-btn`) + panel `#mobile-menu`, dengan ikon ☰/✕,
+  `aria-expanded`, `aria-controls`, dan menu otomatis menutup setelah link diklik
+  atau saat layar diperbesar ≥768px. Ada tombol "Download CV" di dalam menu.
+
+### 2. Gambar: 9,8 MB → 337 KB
+- Semua gambar dikonversi ke WebP, dua ukuran:
+  - `assets/img/<slug>-thumb.webp` (maks 900px) untuk kartu & hero
+  - `assets/img/<slug>-full.webp` (maks 1600px) untuk galeri/lightbox
+- Contoh: `FotoWisuda.jpg` 2,9 MB (6240×4160) → 32 KB (ditampilkan 446px).
+- Semua gambar non-hero diberi `loading="lazy" decoding="async"`; foto hero
+  `fetchpriority="high"`.
+- Total halaman saat dibuka: **±429 KB** (HTML 71 KB + CSS 21 KB + 15 gambar 337 KB).
+
+### 3. Tailwind CDN → CSS hasil build
+- `cdn.tailwindcss.com` (±400 KB JS, compiler runtime, memblokir render) diganti
+  `assets/tailwind.css` (21 KB, sudah di-minify).
+- Sumber: `src/input.css` + `tailwind.config.js` (`darkMode: ["selector", '[data-theme="dark"]']`).
+- Cara build ulang ada di README.md.
+
+### 4. SEO & preview tautan
+- Tambah `meta description`, `canonical`, Open Graph (og:title/description/image/url),
+  Twitter card, `theme-color`, `favicon.svg`, `apple-touch-icon.png`, `og-cover.jpg` (1200×630).
+- `<title>` jadi "Wisnu Ardi Nugroho — Accounting, Finance & Data Analytics".
+
+### 5. Bahasa
+- `<html lang>` sebelumnya `id` padahal konten default Inggris → sekarang `en`, dan
+  diperbarui otomatis saat bahasa diganti.
+- Pilihan bahasa disimpan di `localStorage` (key `lang`), default mengikuti
+  `navigator.language`; sebelumnya reset ke Inggris tiap reload.
+- Label tombol sekarang menampilkan bahasa **tujuan** ("🌐 ID" saat halaman Inggris).
+- Key `data-i18n` tetap sama; menu mobile ikut diterjemahkan.
+
+### 6. Aksesibilitas
+- `aria-label` untuk tombol ikon: tema, bahasa, hamburger, panah slider, tutup galeri,
+  panah galeri.
+- Semua `target="_blank"` diberi `rel="noopener noreferrer"` (8 tautan).
+- Kontras copyright footer dinaikkan (`text-slate-500` → `text-slate-400`, 4,18:1 → 6,9:1).
+- `prefers-reduced-motion` mematikan transisi tema.
+- Gambar modal tidak lagi punya `src=""` (sebelumnya muncul sebagai gambar rusak).
+
+### 7. Kartu proyek & sertifikat
+- Dua kartu yang belum punya tombol ("CFU Enterprise Dashboard", "Accounts Payable
+  Submission Automation") sekarang punya CTA yang membuka galeri — tinggi kartu jadi rata.
+- Thumbnail sertifikat memakai `object-contain` + latar netral, jadi seluruh sertifikat
+  terlihat (sebelumnya ter-crop `object-cover`).
+
+### 8. Kebersihan repo
+- `CV - Wisnu Ardi Nugroho.pdf` → `cv-wisnu-ardi-nugroho.pdf` (tanpa spasi/%20 di URL).
+- Tambah `README.md` dan `.gitignore`.
+- Skrip bantu dipindah ke `scripts/` (`optimize_images.py`, `transform.py`, `make_assets.py`).
+- Referensi `image/EduTax3.png` dihapus karena file tersebut tidak ada (galeri EduTax
+  sebelumnya menyertakan gambar rusak).
+
+## Cara memakai
+
+**Opsi A — timpa langsung**
+1. Ekstrak zip.
+2. Salin seluruh isi folder `Portfolio-Wisnu/` ke repo lokal kamu (timpa `index.html`, tambah
+   `assets/`, `src/`, `scripts/`, `tailwind.config.js`, `README.md`, `.gitignore`; hapus
+   `CV - Wisnu Ardi Nugroho.pdf` yang lama).
+3. `git add -A && git commit -m "Perbaikan tampilan & performa" && git push`.
+
+**Opsi B — cek dulu di lokal**
+```bash
+cd Portfolio-Wisnu
+python -m http.server 8000
+# buka http://localhost:8000
+```
+
+## Yang belum dikerjakan (opsional)
+
+- Screenshot dashboard putih masih menyala di mode gelap (bisa diberi overlay/border halus).
+- Hero punya 3 tombol sejajar; bisa diringkas jadi 2 kalau mau lebih tegas.
+- Folder `image/` (sumber asli, 9,8 MB) masih disertakan agar skrip optimasi bisa dijalankan
+  ulang. Boleh dihapus dari repo kalau tidak diperlukan — situs tidak merujuknya lagi.

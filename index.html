@@ -1,20 +1,61 @@
 <!doctype html>
-<html lang="id" class="scroll-smooth" data-theme="light">
+<html lang="en" class="scroll-smooth" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Wisnu Ardi Nugroho</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Wisnu Ardi Nugroho — Accounting, Finance &amp; Data Analytics</title>
+    <meta
+      name="description"
+      content="Portfolio Wisnu Ardi Nugroho, S.Tr.Ak. — lulusan D4 Akuntansi UNY. Analisis keuangan, dashboard Power BI, dan otomasi pelaporan untuk BUMN dan perusahaan swasta."
+    />
+    <meta name="author" content="Wisnu Ardi Nugroho" />
+    <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B0F17" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href="https://wisnuardi22.github.io/Portfolio-Wisnu/" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Wisnu Ardi Nugroho" />
+    <meta property="og:title" content="Wisnu Ardi Nugroho — Accounting, Finance & Data Analytics" />
+    <meta
+      property="og:description"
+      content="Portfolio: analisis keuangan, dashboard Power BI, dan otomasi pelaporan. Lulusan D4 Akuntansi UNY dengan pengalaman magang di Peruri, PLN, Telkom, dan Askrindo."
+    />
+    <meta property="og:url" content="https://wisnuardi22.github.io/Portfolio-Wisnu/" />
+    <meta property="og:image" content="https://wisnuardi22.github.io/Portfolio-Wisnu/assets/img/og-cover.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Wisnu Ardi Nugroho — Accounting, Finance & Data Analytics" />
+    <meta
+      name="twitter:description"
+      content="Portfolio: analisis keuangan, dashboard Power BI, dan otomasi pelaporan."
+    />
+    <meta name="twitter:image" content="https://wisnuardi22.github.io/Portfolio-Wisnu/assets/img/og-cover.jpg" />
+
+    <link rel="icon" href="assets/favicon.svg" type="assets/img/svg-thumb.webp+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    />
+
+    <!-- Tailwind: CSS hasil build (bukan CDN) -->
+    <link rel="stylesheet" href="assets/tailwind.css" />
     <script>
-      // Konfigurasi Tailwind untuk mendeteksi Dark Mode via atribut data-theme
-      tailwind.config = {
-        darkMode: ["selector", '[data-theme="dark"]'],
-      };
+      // Terapkan tema sebelum paint supaya tidak berkedip terang saat mode gelap
+      try {
+        const t = localStorage.getItem("theme");
+        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+      } catch (e) {}
     </script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
       body {
-        font-family: "Plus Jakarta Sans", sans-serif;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
       }
       /* Transisi halus saat ganti tema */
       body,
@@ -32,14 +73,29 @@
           color 0.3s ease,
           border-color 0.3s ease;
       }
+      @media (prefers-reduced-motion: reduce) {
+        body,
+        section,
+        nav,
+        div,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        span {
+          transition: none;
+        }
+      }
     </style>
   </head>
   <body
     class="bg-[#F8FAFC] dark:bg-[#0B0F17] text-slate-800 dark:text-slate-200 antialiased selection:bg-blue-200 dark:selection:bg-blue-900"
   >
     <nav
-      class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center sticky top-0 bg-[#F8FAFC]/90 dark:bg-[#0B0F17]/90 backdrop-blur-sm z-50 border-b border-slate-200/50 dark:border-slate-800/80"
+      class="sticky top-0 bg-[#F8FAFC]/90 dark:bg-[#0B0F17]/90 backdrop-blur-sm z-50 border-b border-slate-200/50 dark:border-slate-800/80"
     >
+      <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
       <h1
         class="font-bold text-xl tracking-tight text-slate-900 dark:text-white"
       >
@@ -87,6 +143,7 @@
         <button
           onclick="toggleLanguage()"
           id="lang-btn"
+          aria-label="Ganti bahasa halaman"
           class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500 transition shadow-sm cursor-pointer"
         >
           🌐 ID
@@ -96,11 +153,75 @@
         <button
           onclick="toggleTheme()"
           id="theme-btn"
+          aria-label="Ganti tema terang atau gelap"
           class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500 transition shadow-sm cursor-pointer"
           title="Toggle Theme"
         >
           🌙
         </button>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          onclick="toggleMenu()"
+          id="menu-btn"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          class="md:hidden p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500 transition shadow-sm cursor-pointer"
+        >
+          <svg
+            id="menu-icon-open"
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+          <svg
+            id="menu-icon-close"
+            class="w-5 h-5 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      </div>
+
+      <!-- Menu navigasi mobile -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden border-t border-slate-200/70 dark:border-slate-800/80 bg-[#F8FAFC] dark:bg-[#0B0F17] shadow-lg"
+      >
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#about" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_who">Who I Am</a>
+          <a href="#skills" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_skills">Skills & Process</a>
+          <a href="#experience" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_exp">Experience</a>
+          <a href="#projects" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_projects">Projects</a>
+          <a href="#certificates" onclick="closeMenu()" class="py-3" data-i18n="nav_certs">Certificates</a>
+          <a
+            href="cv-wisnu-ardi-nugroho.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="closeMenu()"
+            class="mt-3 mb-1 text-center bg-blue-600 text-white font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 transition"
+            data-i18n="btn_cv"
+            >Download CV</a
+          >
+        </div>
       </div>
     </nav>
 
@@ -152,8 +273,8 @@
             >Contact Me</a
           >
           <a
-            href="CV - Wisnu Ardi Nugroho.pdf"
-            target="_blank"
+            href="cv-wisnu-ardi-nugroho.pdf"
+            target="_blank" rel="noopener noreferrer"
             class="bg-slate-900 dark:bg-slate-800 text-white px-7 py-3 rounded-lg font-medium hover:bg-slate-800 dark:hover:bg-slate-700 transition shadow-md text-center inline-flex items-center justify-center border border-transparent dark:border-slate-700"
             data-i18n="btn_cv"
           >
@@ -182,20 +303,20 @@
             id="profile-slider"
             class="flex w-full h-full transition-transform duration-500 ease-in-out"
           >
-            <img
-              src="image/FotoWisnu.jpeg"
+            <img loading="lazy" decoding="async"
+              src="assets/img/fotowisnu-thumb.webp"
               alt="Wisnu Ardi Nugroho"
               class="w-full h-full object-cover object-center flex-shrink-0"
             />
-            <img
-              src="image/FotoWisuda.jpg"
+            <img loading="lazy" decoding="async"
+              src="assets/img/fotowisuda-thumb.webp"
               alt="Wisnu Graduation"
               class="w-full h-full object-cover object-center flex-shrink-0"
             />
           </div>
 
           <button
-            onclick="prevProfileImage()"
+            onclick="prevProfileImage()" aria-label="Foto profil sebelumnya"
             class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white rounded-full p-2.5 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer shadow-lg"
           >
             <svg
@@ -214,7 +335,7 @@
           </button>
 
           <button
-            onclick="nextProfileImage()"
+            onclick="nextProfileImage()" aria-label="Foto profil berikutnya"
             class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white rounded-full p-2.5 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer shadow-lg"
           >
             <svg
@@ -384,7 +505,7 @@
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
             <div class="md:col-span-1">
               <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img src="image/Peruri Logo.png" alt="Perum Peruri" class="h-10 w-auto object-contain" />
+                <img loading="lazy" decoding="async" src="assets/img/peruri-logo-thumb.webp" alt="Perum Peruri" class="h-10 w-auto object-contain" />
               </div>
               <span class="text-sm font-semibold text-slate-400 block">Apr 2026 - Present</span>
             </div>
@@ -402,7 +523,7 @@
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
             <div class="md:col-span-1">
               <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img src="image/Telkom Logo.png" alt="Telkom Indonesia" class="h-10 w-auto object-contain" />
+                <img loading="lazy" decoding="async" src="assets/img/telkom-logo-thumb.webp" alt="Telkom Indonesia" class="h-10 w-auto object-contain" />
               </div>
               <span class="text-sm font-semibold text-slate-400 block">Aug 2025 - Jan 2026</span>
             </div>
@@ -421,7 +542,7 @@
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
             <div class="md:col-span-1">
               <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img src="image/PLN Logo.png" alt="PT PLN (Persero)" class="h-10 w-auto object-contain" />
+                <img loading="lazy" decoding="async" src="assets/img/pln-logo-thumb.webp" alt="PT PLN (Persero)" class="h-10 w-auto object-contain" />
               </div>
               <span class="text-sm font-semibold text-slate-400 block">Jun 2025 - Jul 2025</span>
             </div>
@@ -442,7 +563,7 @@
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
             <div class="md:col-span-1">
               <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img src="image/Askrindo Logo.png" alt="PT Askrindo" class="h-10 w-auto object-contain" />
+                <img loading="lazy" decoding="async" src="assets/img/askrindo-logo-thumb.webp" alt="PT Askrindo" class="h-10 w-auto object-contain" />
               </div>
               <span class="text-sm font-semibold text-slate-400 block">Apr 2025 - May 2025</span>
             </div>
@@ -477,11 +598,11 @@
           >
             <a
               href="https://ipo-id.vercel.app/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="relative group block overflow-hidden border-b border-slate-200 dark:border-slate-800"
             >
-              <img
-                src="image/IPO Anlys.png"
+              <img loading="lazy" decoding="async"
+                src="assets/img/ipo-anlys-thumb.webp"
                 alt="Smart IPO Analysis Web"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -531,7 +652,7 @@
                 </div>
                 <a
                   href="https://ipo-id.vercel.app/"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md"
                 >
                   Visit Live Website &rarr;
@@ -548,8 +669,8 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('telkom')"
             >
-              <img
-                src="image/PPAD.png"
+              <img loading="lazy" decoding="async"
+                src="assets/img/ppad-thumb.webp"
                 alt="Telkom Dashboard"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -583,15 +704,23 @@
                   analysis to support the preparation of the 2026 RKAP.
                 </p>
               </div>
-              <div class="flex gap-2 mt-4 flex-wrap">
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >Power BI</span
+              <div>
+                <div class="flex gap-2 mt-4 mb-4 flex-wrap">
+                  <span
+                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                    >Power BI</span
+                  >
+                  <span
+                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                    >Tableau</span
+                  >
+                </div>
+                <button
+                  onclick="openGallery('telkom')"
+                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md cursor-pointer"
                 >
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >Tableau</span
-                >
+                  View Dashboard Gallery &rarr;
+                </button>
               </div>
             </div>
           </div>
@@ -604,8 +733,8 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('margaria')"
             >
-              <img
-                src="image/LAS.png"
+              <img loading="lazy" decoding="async"
+                src="assets/img/las-thumb.webp"
                 alt="Accounts Payable Automation"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -640,15 +769,23 @@
                   payable documents.
                 </p>
               </div>
-              <div class="flex gap-2 mt-4 flex-wrap">
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >Ms. Excel</span
+              <div>
+                <div class="flex gap-2 mt-4 mb-4 flex-wrap">
+                  <span
+                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                    >Ms. Excel</span
+                  >
+                  <span
+                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
+                    >VBA Macros</span
+                  >
+                </div>
+                <button
+                  onclick="openGallery('margaria')"
+                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md cursor-pointer"
                 >
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >VBA Macros</span
-                >
+                  View Workflow Gallery &rarr;
+                </button>
               </div>
             </div>
           </div>
@@ -659,11 +796,11 @@
           >
             <a
               href="https://github.com/wisnuardi22/LocalGuide-Inflation"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               class="relative group block overflow-hidden border-b border-slate-200 dark:border-slate-800"
             >
-              <img
-                src="image/GC.png"
+              <img loading="lazy" decoding="async"
+                src="assets/img/gc-thumb.webp"
                 alt="Global Inflation Dashboard"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -711,7 +848,7 @@
                 </div>
                 <a
                   href="https://github.com/wisnuardi22/LocalGuide-Inflation"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md"
                 >
                   View on GitHub &rarr;
@@ -728,8 +865,8 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('EduTax UNY')"
             >
-              <img
-                src="image/EduTax1.png"
+              <img loading="lazy" decoding="async"
+                src="assets/img/edutax1-thumb.webp"
                 alt="EduTax UNY - Coretax Learning Platform"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -791,8 +928,8 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('Equilife')"
             >
-              <img
-                src="image/Eq1.png"
+              <img loading="lazy" decoding="async"
+                src="assets/img/eq1-thumb.webp"
                 alt="Accounts Payable Automation"
                 class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -833,7 +970,7 @@
               </div>
                 <a
                   href="https://github.com/wisnuardi22/Equilife-GitIO/tree/main"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md"
                 >
                   View on GitHub &rarr;
@@ -865,10 +1002,10 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('CertifiedIBM')"
             >
-              <img
-                src="image/IBM.jpg"
+              <img loading="lazy" decoding="async"
+                src="assets/img/ibm-thumb.webp"
                 alt="IBM Certificate"
-                class="w-full h-56 object-cover border-b border-slate-200 dark:border-slate-800"
+                class="w-full h-56 object-contain bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
               />
               <div class="p-6">
                 <h4 class="font-bold text-slate-900 dark:text-white mb-2">
@@ -888,10 +1025,10 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('CertifiedSS')"
             >
-              <img
-                src="image/Softskill.jpg"
+              <img loading="lazy" decoding="async"
+                src="assets/img/softskill-thumb.webp"
                 alt="Telkom Certificate"
-                class="w-full h-56 object-cover border-b border-slate-200 dark:border-slate-800"
+                class="w-full h-56 object-contain bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
               />
               <div class="p-6">
                 <h4 class="font-bold text-slate-900 dark:text-white mb-2">
@@ -911,10 +1048,10 @@
               class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
               onclick="openGallery('CertifiedHS')"
             >
-              <img
-                src="image/Hardskill.jpg"
+              <img loading="lazy" decoding="async"
+                src="assets/img/hardskill-thumb.webp"
                 alt="Telkom Certificate"
-                class="w-full h-56 object-cover border-b border-slate-200 dark:border-slate-800"
+                class="w-full h-56 object-contain bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
               />
               <div class="p-6">
                 <h4 class="font-bold text-slate-900 dark:text-white mb-2">
@@ -982,7 +1119,7 @@
           >
           <a
             href="https://www.linkedin.com/in/wisnu-ardi-nugroho-242204249/"
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             class="text-slate-400 hover:text-white transition"
             >LinkedIn Profile &rarr;</a
           >
@@ -990,7 +1127,7 @@
       </div>
 
       <div
-        class="max-w-6xl mx-auto px-6 text-center text-slate-500 text-sm border-t border-slate-800 pt-8"
+        class="max-w-6xl mx-auto px-6 text-center text-slate-400 text-sm border-t border-slate-800 pt-8"
       >
         <p>© 2026 Wisnu Ardi Nugroho. Accounting | Finance & Data Analytics.</p>
       </div>
@@ -1002,7 +1139,7 @@
       class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300"
     >
       <button
-        onclick="closeGallery()"
+        onclick="closeGallery()" aria-label="Tutup galeri"
         class="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-gray-300 z-50 transition-transform hover:scale-110 cursor-pointer"
       >
         <svg
@@ -1020,7 +1157,7 @@
         </svg>
       </button>
       <button
-        onclick="changeImage(-1)"
+        onclick="changeImage(-1)" aria-label="Gambar sebelumnya"
         class="absolute left-2 md:left-10 text-white hover:text-gray-300 z-50 p-2 transition-transform hover:scale-110 cursor-pointer"
       >
         <svg
@@ -1039,12 +1176,11 @@
       </button>
       <img
         id="modalImage"
-        src=""
+        alt="Pratinjau gambar proyek"
         class="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl transition-all duration-300 ease-in-out"
-        alt="Project Gallery Image"
       />
       <button
-        onclick="changeImage(1)"
+        onclick="changeImage(1)" aria-label="Gambar berikutnya"
         class="absolute right-2 md:right-10 text-white hover:text-gray-300 z-50 p-2 transition-transform hover:scale-110 cursor-pointer"
       >
         <svg
@@ -1254,20 +1390,47 @@
         },
       };
 
-      let currentLang = "id";
+      // Konten HTML ditulis dalam bahasa Inggris, jadi default = "en".
+      // Pilihan bahasa disimpan di localStorage agar tidak reset tiap reload.
+      let currentLang = "en";
+
+      function applyLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.lang = lang;
+        const btn = document.getElementById("lang-btn");
+        // Tombol menampilkan bahasa TUJUAN (yang akan dipakai setelah diklik)
+        btn.innerText = lang === "id" ? "🌐 EN" : "🌐 ID";
+        btn.setAttribute(
+          "aria-label",
+          lang === "id" ? "Switch page to English" : "Ganti bahasa ke Indonesia"
+        );
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const key = el.getAttribute("data-i18n");
+          const dict = translations[lang] || {};
+          if (dict[key]) el.innerText = dict[key];
+        });
+        localStorage.setItem("lang", lang);
+      }
 
       function toggleLanguage() {
-        currentLang = currentLang === "id" ? "en" : "id";
-        document.getElementById("lang-btn").innerText =
-          currentLang === "id" ? "🌐 ID" : "🌐 EN";
+        applyLanguage(currentLang === "id" ? "en" : "id");
+      }
 
-        const elements = document.querySelectorAll("[data-i18n]");
-        elements.forEach((el) => {
-          const key = el.getAttribute("data-i18n");
-          if (translations[currentLang][key]) {
-            el.innerText = translations[currentLang][key];
-          }
-        });
+      // Menu navigasi mobile
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const open = menu.classList.contains("hidden");
+        menu.classList.toggle("hidden", !open);
+        document.getElementById("menu-icon-open").classList.toggle("hidden", open);
+        document.getElementById("menu-icon-close").classList.toggle("hidden", !open);
+        document
+          .getElementById("menu-btn")
+          .setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      function closeMenu() {
+        const menu = document.getElementById("mobile-menu");
+        if (menu && !menu.classList.contains("hidden")) toggleMenu();
       }
 
       // ==========================================
@@ -1294,50 +1457,64 @@
         document.documentElement.setAttribute("data-theme", savedTheme);
         document.getElementById("theme-btn").innerText =
           savedTheme === "dark" ? "☀️" : "🌙";
+
+        // Bahasa: pakai pilihan tersimpan; kalau belum ada, ikuti bahasa browser
+        const savedLang = localStorage.getItem("lang");
+        if (savedLang === "id" || savedLang === "en") {
+          applyLanguage(savedLang);
+        } else {
+          const browserLang = (navigator.language || "en").toLowerCase();
+          applyLanguage(browserLang.startsWith("id") ? "id" : "en");
+        }
+
+        // Tutup menu mobile kalau layar dibesarkan
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) closeMenu();
+        });
       });
 
       // ==========================================
       // 3. LOGIKA MODAL & PROFIL SLIDER
       // ==========================================
       const projectData = {
-        telkom: ["image/PPAD.png", "image/PPAD2.png", "image/PPAD3.png"],
+        telkom: ["assets/img/ppad-full.webp", "assets/img/ppad2-full.webp", "assets/img/ppad3-full.webp"],
         margaria: [
-          "image/LAS1.png",
-          "image/LAS.png",
-          "image/LAS2.png",
-          "image/LAS3.png",
-          "image/LAS4.png",
-          "image/LAS5.png",
-          "image/LAS6.png",
-          "image/LAS7.png",
-          "image/LAS8.png",
+          "assets/img/las1-full.webp",
+          "assets/img/las-full.webp",
+          "assets/img/las2-full.webp",
+          "assets/img/las3-full.webp",
+          "assets/img/las4-full.webp",
+          "assets/img/las5-full.webp",
+          "assets/img/las6-full.webp",
+          "assets/img/las7-full.webp",
+          "assets/img/las8-full.webp",
         ],
         smes: [
-          "image/SMES.png",
-          "image/SMES1.png",
-          "image/SMES2.png",
-          "image/SMES3.png",
-          "image/SMES4.png",
-          "image/SMES5.png",
-          "image/SMES6.png",
-          "image/SMES7.png",
-          "image/SMES8.png",
-          "image/SMES9.png",
-          "image/SMES10.png",
-          "image/SMES11.png",
-          "image/SMES12.png",
-          "image/SMES13.png",
+          "assets/img/smes-full.webp",
+          "assets/img/smes1-full.webp",
+          "assets/img/smes2-full.webp",
+          "assets/img/smes3-full.webp",
+          "assets/img/smes4-full.webp",
+          "assets/img/smes5-full.webp",
+          "assets/img/smes6-full.webp",
+          "assets/img/smes7-full.webp",
+          "assets/img/smes8-full.webp",
+          "assets/img/smes9-full.webp",
+          "assets/img/smes10-full.webp",
+          "assets/img/smes11-full.webp",
+          "assets/img/smes12-full.webp",
+          "assets/img/smes13-full.webp",
         ],
         Equilife: [
-          "image/Eq1.png",
-          "image/Eq2.png",
-          "image/Eq3.png",
-          "image/Eq4.png",
+          "assets/img/eq1-full.webp",
+          "assets/img/eq2-full.webp",
+          "assets/img/eq3-full.webp",
+          "assets/img/eq4-full.webp",
         ],
-        CertifiedIBM: ["image/IBM.jpg"],
-        CertifiedSS: ["image/Softskill.jpg"],
-        CertifiedHS: ["image/Hardskill.jpg"],
-        "EduTax UNY": ["image/EduTax1.png", "image/EduTax2.png", "image/EduTax3.png"],
+        CertifiedIBM: ["assets/img/ibm-full.webp"],
+        CertifiedSS: ["assets/img/softskill-full.webp"],
+        CertifiedHS: ["assets/img/hardskill-full.webp"],
+        "EduTax UNY": ["assets/img/edutax1-full.webp", "assets/img/edutax2-full.webp"],
       };
 
       let currentProject = "";
