@@ -92,8 +92,9 @@ python -m http.server 8000
 Seluruh tampilan dibangun ulang. Tailwind dibuang, diganti `assets/style.css` (hand-written CSS).
 
 ### Yang berubah
-- **Tipografi**: Instrument Serif (judul) + Inter (teks). Skala ukuran konsisten, lebar baris
-  dibatasi (`68ch` untuk bullet pengalaman, `28rem` untuk paragraf pendukung).
+- **Tipografi**: Poppins (400/500/600) untuk teks & judul, Instrument Serif italic hanya untuk
+  kata aksen dan nama peran di header. Skala konsisten, lebar baris dibatasi (`66ch` untuk bullet
+  pengalaman, `28rem` untuk paragraf pendukung).
 - **Palet**: kertas gading `#faf8f3`, tinta `#17160f`, satu aksen hijau tua `#2c5a4a`.
   Mode gelap: `#0d0e0c` / `#f0ede4`. Semua lewat token di `:root` dan `[data-theme="dark"]`.
 - **Struktur**: hero dua kolom (teks + foto), strip logo magang, About + tabel fakta,

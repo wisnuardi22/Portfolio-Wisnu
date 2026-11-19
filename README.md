@@ -22,7 +22,9 @@ Tidak ada framework, tidak ada build step. Satu file HTML, satu file CSS.
 Semua di `assets/style.css`. Token warna, font, dan radius ada di blok `:root`; versi gelap di
 `[data-theme="dark"]`. Ubah nilainya di situ, bukan di banyak tempat.
 
-Halaman tidak memakai Tailwind lagi — tidak perlu `npm`/`npx` untuk mengubah tampilan.
+- Font: Poppins (400/500/600) untuk teks dan judul; Instrument Serif italic untuk kata aksen.
+  Dimuat dari Google Fonts di `index.html`.
+- Halaman tidak memakai Tailwind lagi — tidak perlu `npm`/`npx` untuk mengubah tampilan.
 
 ## Menambah gambar proyek
 
