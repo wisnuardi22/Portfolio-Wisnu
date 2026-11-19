@@ -496,7 +496,7 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .portrait { justify-self: start; width: min(100%, 22rem); }
-  .hero h1 { font-size: clamp(2.3rem, 8vw, 3.2rem); }
+  .hero h1 { font-size: clamp(1.95rem, 7.4vw, 3.1rem); }
   .sec-head { grid-template-columns: 1fr; gap: 0.8rem; }
   .sec-head p { justify-self: start; }
   .about__grid { grid-template-columns: 1fr; }
