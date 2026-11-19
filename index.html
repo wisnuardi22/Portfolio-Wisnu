@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth" data-theme="light">
+<html lang="en" class="no-js" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wisnu Ardi Nugroho — Accounting, Finance &amp; Data Analytics</title>
+    <title>Wisnu Ardi Nugroho — Accounting, Finance & Data Analytics</title>
     <meta
       name="description"
       content="Portfolio Wisnu Ardi Nugroho, S.Tr.Ak. — lulusan D4 Akuntansi UNY. Analisis keuangan, dashboard Power BI, dan otomasi pelaporan untuk BUMN dan perusahaan swasta."
     />
     <meta name="author" content="Wisnu Ardi Nugroho" />
-    <meta name="theme-color" content="#F8FAFC" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0B0F17" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0D0E0C" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://wisnuardi22.github.io/Portfolio-Wisnu/" />
 
     <!-- Open Graph / Twitter -->
@@ -22,18 +22,15 @@
       content="Portfolio: analisis keuangan, dashboard Power BI, dan otomasi pelaporan. Lulusan D4 Akuntansi UNY dengan pengalaman magang di Peruri, PLN, Telkom, dan Askrindo."
     />
     <meta property="og:url" content="https://wisnuardi22.github.io/Portfolio-Wisnu/" />
-    <meta property="og:image" content="https://wisnuardi22.github.io/Portfolio-Wisnu/assets/img/og-cover.jpg" />
+    <meta property="og:image" content="https://wisnuardi22.github.io/Portfolio-Wisnu/assets/og-cover.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Wisnu Ardi Nugroho — Accounting, Finance & Data Analytics" />
-    <meta
-      name="twitter:description"
-      content="Portfolio: analisis keuangan, dashboard Power BI, dan otomasi pelaporan."
-    />
-    <meta name="twitter:image" content="https://wisnuardi22.github.io/Portfolio-Wisnu/assets/img/og-cover.jpg" />
+    <meta name="twitter:description" content="Portfolio: analisis keuangan, dashboard Power BI, dan otomasi pelaporan." />
+    <meta name="twitter:image" content="https://wisnuardi22.github.io/Portfolio-Wisnu/assets/og-cover.jpg" />
 
-    <link rel="icon" href="assets/favicon.svg" type="assets/img/svg-thumb.webp+xml" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
     <!-- Fonts -->
@@ -41,1208 +38,586 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
     />
 
-    <!-- Tailwind: CSS hasil build (bukan CDN) -->
-    <link rel="stylesheet" href="assets/tailwind.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <script>
       // Terapkan tema sebelum paint supaya tidak berkedip terang saat mode gelap
+      document.documentElement.classList.remove("no-js");
       try {
-        const t = localStorage.getItem("theme");
-        if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
       } catch (e) {}
     </script>
-    <style>
-      body {
-        font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-      }
-      /* Transisi halus saat ganti tema */
-      body,
-      section,
-      nav,
-      div,
-      h1,
-      h2,
-      h3,
-      h4,
-      p,
-      span {
-        transition:
-          background-color 0.3s ease,
-          color 0.3s ease,
-          border-color 0.3s ease;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        body,
-        section,
-        nav,
-        div,
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        span {
-          transition: none;
-        }
-      }
-    </style>
   </head>
-  <body
-    class="bg-[#F8FAFC] dark:bg-[#0B0F17] text-slate-800 dark:text-slate-200 antialiased selection:bg-blue-200 dark:selection:bg-blue-900"
-  >
-    <nav
-      class="sticky top-0 bg-[#F8FAFC]/90 dark:bg-[#0B0F17]/90 backdrop-blur-sm z-50 border-b border-slate-200/50 dark:border-slate-800/80"
-    >
-      <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <h1
-        class="font-bold text-xl tracking-tight text-slate-900 dark:text-white"
-      >
-        Wisnu Ardi Nugroho
-      </h1>
 
-      <div
-        class="hidden md:flex space-x-8 text-sm font-medium text-slate-500 dark:text-slate-400"
-      >
-        <a
-          href="#about"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          data-i18n="nav_who"
-          >Who I Am</a
-        >
-        <a
-          href="#skills"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          data-i18n="nav_skills"
-          >Skills & Process</a
-        >
-        <a
-          href="#experience"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          data-i18n="nav_exp"
-          >Experience</a
-        >
-        <a
-          href="#projects"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          data-i18n="nav_projects"
-          >Projects</a
-        >
-        <a
-          href="#certificates"
-          class="hover:text-blue-600 dark:hover:text-blue-400 transition"
-          data-i18n="nav_certs"
-          >Certificates</a
-        >
-      </div>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
 
-      <!-- Tombol Pengaturan (Bahasa & Tema) -->
-      <div class="flex items-center gap-3">
-        <!-- Toggle Bahasa -->
-        <button
-          onclick="toggleLanguage()"
-          id="lang-btn"
-          aria-label="Ganti bahasa halaman"
-          class="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500 transition shadow-sm cursor-pointer"
-        >
-          🌐 ID
-        </button>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a href="#top" class="brand">
+          <span class="brand__name">Wisnu Ardi Nugroho</span>
+          <span class="brand__role">Accounting &amp; Analytics</span>
+        </a>
 
-        <!-- Toggle Tema (Siang / Malam) -->
-        <button
-          onclick="toggleTheme()"
-          id="theme-btn"
-          aria-label="Ganti tema terang atau gelap"
-          class="p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500 transition shadow-sm cursor-pointer"
-          title="Toggle Theme"
-        >
-          🌙
-        </button>
+        <nav class="nav" aria-label="Main">
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#process" data-i18n="nav_process">Process</a>
+          <a href="#experience" data-i18n="nav_exp">Experience</a>
+          <a href="#projects" data-i18n="nav_projects">Projects</a>
+          <a href="#certificates" data-i18n="nav_certs">Certificates</a>
+        </nav>
 
-        <!-- Hamburger (mobile) -->
-        <button
-          onclick="toggleMenu()"
-          id="menu-btn"
-          aria-label="Buka menu navigasi"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          class="md:hidden p-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500 transition shadow-sm cursor-pointer"
-        >
-          <svg
-            id="menu-icon-open"
-            class="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-          <svg
-            id="menu-icon-close"
-            class="w-5 h-5 hidden"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      </div>
-
-      <!-- Menu navigasi mobile -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden border-t border-slate-200/70 dark:border-slate-800/80 bg-[#F8FAFC] dark:bg-[#0B0F17] shadow-lg"
-      >
-        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col text-sm font-medium text-slate-600 dark:text-slate-300">
-          <a href="#about" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_who">Who I Am</a>
-          <a href="#skills" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_skills">Skills & Process</a>
-          <a href="#experience" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_exp">Experience</a>
-          <a href="#projects" onclick="closeMenu()" class="py-3 border-b border-slate-200/60 dark:border-slate-800/60" data-i18n="nav_projects">Projects</a>
-          <a href="#certificates" onclick="closeMenu()" class="py-3" data-i18n="nav_certs">Certificates</a>
-          <a
-            href="cv-wisnu-ardi-nugroho.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="closeMenu()"
-            class="mt-3 mb-1 text-center bg-blue-600 text-white font-semibold px-4 py-3 rounded-lg hover:bg-blue-700 transition"
-            data-i18n="btn_cv"
-            >Download CV</a
-          >
-        </div>
-      </div>
-    </nav>
-
-    <header
-      id="about"
-      class="max-w-6xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center"
-    >
-      <div>
-        <p
-          class="text-blue-600 dark:text-blue-400 font-semibold text-sm tracking-widest mb-4 uppercase"
-          data-i18n="hero_subtitle"
-        >
-          Accounting, Finance & Data Analytics
-        </p>
-        <h2
-          class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-slate-900 dark:text-white"
-          data-i18n="hero_title"
-        >
-          Transforming complex financial data into interactive dashboards.
-        </h2>
-        <p
-          class="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed"
-          data-i18n="hero_desc1"
-        >
-          Accounting graduated from Yogyakarta State University with hands-on
-          internship experience in corporate finance across state-owned
-          enterprises.
-        </p>
-        <p
-          class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed"
-          data-i18n="hero_desc2"
-        >
-          I develop financial analysis workflows and dashboards that support
-          decision-making. My expertise in accounting operations and data
-          analytics enables me to deliver accurate reporting, efficient
-          processes, and clear financial insights.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            class="bg-blue-600 text-white px-7 py-3 rounded-lg font-medium hover:bg-blue-700 transition shadow-lg shadow-blue-500/30 text-center"
-            data-i18n="btn_projects"
-            >View Projects</a
-          >
-          <a
-            href="#contact"
-            class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 px-7 py-3 rounded-lg font-medium hover:border-slate-400 transition text-center"
-            data-i18n="btn_contact"
-            >Contact Me</a
-          >
-          <a
-            href="cv-wisnu-ardi-nugroho.pdf"
-            target="_blank" rel="noopener noreferrer"
-            class="bg-slate-900 dark:bg-slate-800 text-white px-7 py-3 rounded-lg font-medium hover:bg-slate-800 dark:hover:bg-slate-700 transition shadow-md text-center inline-flex items-center justify-center border border-transparent dark:border-slate-700"
-            data-i18n="btn_cv"
-          >
-            <svg
-              class="w-4 h-4 mr-2 fill-current"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-            >
-              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+        <div class="tools">
+          <button class="tool-btn" id="lang-btn" type="button" onclick="toggleLanguage()" aria-label="Ganti bahasa halaman">ID</button>
+          <button class="tool-btn" id="theme-btn" type="button" onclick="toggleTheme()" aria-label="Ganti tema terang atau gelap">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z" />
             </svg>
-            Download CV
-          </a>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.2" />
+              <path stroke-linecap="round" d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4" />
+            </svg>
+          </button>
+          <button class="tool-btn menu-btn" id="menu-btn" type="button" onclick="toggleMenu()" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
         </div>
       </div>
 
-      <!-- Bagian Foto Profil dengan Slider -->
-      <div class="flex justify-center items-center h-full">
-        <div
-          class="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl group border border-slate-200 dark:border-slate-800"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-10 pointer-events-none"
-          ></div>
-
-          <div
-            id="profile-slider"
-            class="flex w-full h-full transition-transform duration-500 ease-in-out"
-          >
-            <img loading="lazy" decoding="async"
-              src="assets/img/fotowisnu-thumb.webp"
-              alt="Wisnu Ardi Nugroho"
-              class="w-full h-full object-cover object-center flex-shrink-0"
-            />
-            <img loading="lazy" decoding="async"
-              src="assets/img/fotowisuda-thumb.webp"
-              alt="Wisnu Graduation"
-              class="w-full h-full object-cover object-center flex-shrink-0"
-            />
-          </div>
-
-          <button
-            onclick="prevProfileImage()" aria-label="Foto profil sebelumnya"
-            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white rounded-full p-2.5 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer shadow-lg"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 19l-7-7 7-7"
-              ></path>
-            </svg>
-          </button>
-
-          <button
-            onclick="nextProfileImage()" aria-label="Foto profil berikutnya"
-            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/40 hover:bg-black/60 text-white rounded-full p-2.5 backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 cursor-pointer shadow-lg"
-          >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 5l7 7-7 7"
-              ></path>
-            </svg>
-          </button>
-
-          <div
-            class="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2"
-          >
-            <div
-              id="dot-0"
-              class="w-2.5 h-2.5 rounded-full bg-white transition-all shadow-md"
-            ></div>
-            <div
-              id="dot-1"
-              class="w-2.5 h-2.5 rounded-full bg-white/40 transition-all shadow-md"
-            ></div>
-          </div>
+      <div class="mobile-nav" id="mobile-nav">
+        <div class="wrap">
+          <a href="#about" onclick="closeMenu()"><span data-i18n="nav_about">About</span><span>01</span></a>
+          <a href="#process" onclick="closeMenu()"><span data-i18n="nav_process">Process</span><span>02</span></a>
+          <a href="#experience" onclick="closeMenu()"><span data-i18n="nav_exp">Experience</span><span>03</span></a>
+          <a href="#projects" onclick="closeMenu()"><span data-i18n="nav_projects">Projects</span><span>04</span></a>
+          <a href="#certificates" onclick="closeMenu()"><span data-i18n="nav_certs">Certificates</span><span>05</span></a>
+          <a href="cv-wisnu-ardi-nugroho.pdf" target="_blank" rel="noopener noreferrer" onclick="closeMenu()"><span data-i18n="btn_cv">Download CV</span><span>PDF</span></a>
         </div>
       </div>
     </header>
 
-    <section
-      id="skills"
-      class="bg-white dark:bg-[#121824] py-24 border-y border-slate-200 dark:border-slate-800"
-    >
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <h3
-            class="text-3xl font-bold text-slate-900 dark:text-white mb-4"
-            data-i18n="skills_title"
-          >
-            My Process
-          </h3>
-          <p class="text-slate-500 dark:text-slate-400" data-i18n="skills_desc">
-            A systematic approach to solving analysis and reporting challenges.
-          </p>
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top">
+        <div class="wrap hero__grid">
+          <div class="reveal">
+            <p class="eyebrow" data-i18n="hero_eyebrow">Accounting · Finance · Data Analytics</p>
+            <h1 data-i18n="hero_title">Turning complex financial data into reports that stay <em>clear</em>.</h1>
+            <p class="hero__lede" data-i18n="hero_lede">
+              Accounting graduate from Universitas Negeri Yogyakarta. Internship experience at Peruri, Telkom, PLN, and
+              Askrindo across financial analysis, reconciliation, and reporting dashboards.
+            </p>
+
+            <div class="hero__meta">
+              <span><span class="dot-live" aria-hidden="true"></span><b data-i18n="meta_status">Open to opportunities</b></span>
+              <span data-i18n="meta_loc">Yogyakarta, Indonesia</span>
+              <span data-i18n="meta_focus">Financial analysis &amp; reporting</span>
+            </div>
+
+            <div class="hero__actions">
+              <a class="btn btn--solid" href="#projects" data-i18n="btn_projects">View projects</a>
+              <a class="link-arrow" href="cv-wisnu-ardi-nugroho.pdf" target="_blank" rel="noopener noreferrer">
+                <span data-i18n="btn_cv">Download CV</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0 4.5-4.5M12 16l-4.5-4.5M5 20h14" /></svg>
+              </a>
+              <a class="link-arrow" href="#contact" data-i18n="btn_contact">Get in touch</a>
+            </div>
+          </div>
+
+          <figure class="portrait reveal">
+            <div class="portrait__frame">
+              <div class="portrait__slide" id="profile-slider">
+                <img src="assets/img/fotowisnu-thumb.webp" alt="Wisnu Ardi Nugroho" width="900" height="1125" fetchpriority="high" decoding="async" />
+                <img src="assets/img/fotowisuda-thumb.webp" alt="Wisnu Ardi Nugroho saat wisuda" width="900" height="1125" loading="lazy" decoding="async" />
+              </div>
+              <div class="portrait__dots" role="tablist" aria-label="Foto profil">
+                <button type="button" role="tab" aria-current="true" aria-label="Foto 1" onclick="showProfile(0)"></button>
+                <button type="button" role="tab" aria-current="false" aria-label="Foto 2" onclick="showProfile(1)"></button>
+              </div>
+            </div>
+            <figcaption>
+              <span>Wisnu Ardi Nugroho, S.Tr.Ak.</span>
+              <span>Yogyakarta</span>
+            </figcaption>
+          </figure>
         </div>
+      </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center relative">
-          <div
-            class="hidden md:block absolute top-6 left-[10%] right-[10%] h-0.5 bg-blue-100 dark:bg-slate-800 z-0"
-          ></div>
-
-          <div class="relative z-10">
-            <div
-              class="w-12 h-12 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-blue-500/40"
-            >
-              1
-            </div>
-            <h4
-              class="font-bold text-slate-800 dark:text-white mb-2"
-              data-i18n="p1_title"
-            >
-              Discovery
-            </h4>
-            <p
-              class="text-sm text-slate-500 dark:text-slate-400"
-              data-i18n="p1_desc"
-            >
-              Identifying financial needs and required data.
-            </p>
-          </div>
-          <div class="relative z-10">
-            <div
-              class="w-12 h-12 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-blue-500/40"
-            >
-              2
-            </div>
-            <h4
-              class="font-bold text-slate-800 dark:text-white mb-2"
-              data-i18n="p2_title"
-            >
-              Planning
-            </h4>
-            <p
-              class="text-sm text-slate-500 dark:text-slate-400"
-              data-i18n="p2_desc"
-            >
-              Structuring workflows for reporting and reconciliation.
-            </p>
-          </div>
-          <div class="relative z-10">
-            <div
-              class="w-12 h-12 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-blue-500/40"
-            >
-              3
-            </div>
-            <h4
-              class="font-bold text-slate-800 dark:text-white mb-2"
-              data-i18n="p3_title"
-            >
-              Research
-            </h4>
-            <p
-              class="text-sm text-slate-500 dark:text-slate-400"
-              data-i18n="p3_desc"
-            >
-              Gathering records and information from operational systems.
-            </p>
-          </div>
-          <div class="relative z-10">
-            <div
-              class="w-12 h-12 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-blue-500/40"
-            >
-              4
-            </div>
-            <h4
-              class="font-bold text-slate-800 dark:text-white mb-2"
-              data-i18n="p4_title"
-            >
-              Optimization
-            </h4>
-            <p
-              class="text-sm text-slate-500 dark:text-slate-400"
-              data-i18n="p4_desc"
-            >
-              Reviewing results and improving data accuracy.
-            </p>
-          </div>
-          <div class="relative z-10">
-            <div
-              class="w-12 h-12 mx-auto bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4 shadow-lg shadow-blue-500/40"
-            >
-              5
-            </div>
-            <h4
-              class="font-bold text-slate-800 dark:text-white mb-2"
-              data-i18n="p5_title"
-            >
-              Execution
-            </h4>
-            <p
-              class="text-sm text-slate-500 dark:text-slate-400"
-              data-i18n="p5_desc"
-            >
-              Processing transactions and creating reporting dashboards.
-            </p>
-          </div>
-      </div>
-    </section>
-
-    <section
-      id="experience"
-      class="py-24 bg-[#F8FAFC] dark:bg-[#0B0F17] border-b border-slate-200 dark:border-slate-800"
-    >
-      <div class="max-w-6xl mx-auto px-6">
-        <h3
-          class="text-3xl font-bold text-slate-900 dark:text-white mb-12"
-          data-i18n="exp_title"
-        >
-          Internship Experience
-        </h3>
-
-        <div class="space-y-16">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-            <div class="md:col-span-1">
-              <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img loading="lazy" decoding="async" src="assets/img/peruri-logo-thumb.webp" alt="Perum Peruri" class="h-10 w-auto object-contain" />
-              </div>
-              <span class="text-sm font-semibold text-slate-400 block">Apr 2026 - Present</span>
-            </div>
-            <div class="md:col-span-3">
-              <h4 class="text-xl font-bold text-slate-900 dark:text-white">Corporate Strategy and Performance Intern</h4>
-              <p class="text-blue-600 dark:text-blue-400 font-medium mb-4 text-sm">Perum Peruri (Perusahaan Umum Percetakan Uang Republik Indonesia)</p>
-              <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed">
-                <li data-i18n="exp_peruri_1">Updated OMTI (Objective, Measurement, Target, and Initiative), a performance management application used to monitor and evaluate divisional performance.</li>
-                <li data-i18n="exp_peruri_2">Coordinated with cross-divisional teams to validate performance indicators and ensure data accuracy, consistency, and alignment within OMTI.</li>
-                <li data-i18n="exp_peruri_3">Contributed to the development of Divisional Service Level Agreements (SLA), including service identification, service mapping, and consolidation into the final SLA document.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-            <div class="md:col-span-1">
-              <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img loading="lazy" decoding="async" src="assets/img/telkom-logo-thumb.webp" alt="Telkom Indonesia" class="h-10 w-auto object-contain" />
-              </div>
-              <span class="text-sm font-semibold text-slate-400 block">Aug 2025 - Jan 2026</span>
-            </div>
-            <div class="md:col-span-3">
-              <h4 class="text-xl font-bold text-slate-900 dark:text-white">Enterprise Business Strategy Intern</h4>
-              <p class="text-blue-600 dark:text-blue-400 font-medium mb-4 text-sm">PT Telekomunikasi Indonesia</p>
-              <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed">
-                <li data-i18n="exp_telkom_1">Conducted competitor financial analysis and collaborated with the Market Movement team to provide supporting insights for business and competitive analysis.</li>
-                <li data-i18n="exp_telkom_2">Developed the CFU Enterprise Portfolio Profitability Analysis Dashboard to visualize and analyze Telkom's financial performance against competitors.</li>
-                <li data-i18n="exp_telkom_3">Contributed to the preparation of the 2026 Corporate Work and Budget Plan (RKAP), including presentation materials and meeting documentation.</li>
-                <li data-i18n="exp_telkom_4">Supported business review activities for subsidiaries and divisions by assisting in performance analysis and review.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-            <div class="md:col-span-1">
-              <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img loading="lazy" decoding="async" src="assets/img/pln-logo-thumb.webp" alt="PT PLN (Persero)" class="h-10 w-auto object-contain" />
-              </div>
-              <span class="text-sm font-semibold text-slate-400 block">Jun 2025 - Jul 2025</span>
-            </div>
-            <div class="md:col-span-3">
-              <h4 class="text-xl font-bold text-slate-900 dark:text-white">General and Finance Affairs Department Intern</h4>
-              <p class="text-blue-600 dark:text-blue-400 font-medium mb-4 text-sm">PT PLN (Persero) UP3 Yogyakarta</p>
-              <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed">
-                <li data-i18n="exp_pln_1">Verified service payment documents to ensure completeness and compliance with internal financial procedures.</li>
-                <li data-i18n="exp_pln_2">Monitored departmental KPIs and operational performance data through the SAP system.</li>
-                <li data-i18n="exp_pln_3">Performed daily customer receivables reconciliation through the AP3T system to identify and minimize financial discrepancies.</li>
-                <li data-i18n="exp_pln_4">Recorded monthly cash expenditure data and maintained financial records through the ApKeu application.</li>
-                <li data-i18n="exp_pln_5">Managed tax withholding certificates (bukti potong pajak) and supported vendor invoice processing.</li>
-                <li data-i18n="exp_pln_6">Assisted the Team Leader with accounting administration, ledger checking, and financial reporting preparation.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-            <div class="md:col-span-1">
-              <div class="bg-white/80 dark:bg-white/90 p-3 rounded-xl inline-block mb-2 shadow-sm">
-                <img loading="lazy" decoding="async" src="assets/img/askrindo-logo-thumb.webp" alt="PT Askrindo" class="h-10 w-auto object-contain" />
-              </div>
-              <span class="text-sm font-semibold text-slate-400 block">Apr 2025 - May 2025</span>
-            </div>
-            <div class="md:col-span-3">
-              <h4 class="text-xl font-bold text-slate-900 dark:text-white">General and Finance Affairs Department Intern</h4>
-              <p class="text-blue-600 dark:text-blue-400 font-medium mb-4 text-sm">PT ASKRINDO Yogyakarta Branch</p>
-              <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-300 text-sm font-light leading-relaxed">
-                <li data-i18n="exp_askrindo_1">Performed monthly bank reconciliations, monitored cash balances, and conducted physical cash counts (Cash Opname).</li>
-                <li data-i18n="exp_askrindo_2">Prepared and reconciled cash and non-cash expenditure reports against employee attendance and operational cost data.</li>
-                <li data-i18n="exp_askrindo_3">Verified documentation for KUR credit insurance policy cancellations to ensure data completeness and compliance.</li>
-                <li data-i18n="exp_askrindo_4">Calculated and reconciled monthly tax liabilities, including PPh 21, PPN, and PPh 4(2), to support timely tax reporting.</li>
-              </ul>
-            </div>
-          </div>
-        </div>        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="py-24 bg-white dark:bg-[#121824]">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3
-          class="text-3xl font-bold text-slate-900 dark:text-white mb-12"
-          data-i18n="proj_title"
-        >
-          Project Showcase
-        </h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Project 1 -->
-          <div
-            class="bg-[#F8FAFC] dark:bg-[#0B0F17] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-          >
-            <a
-              href="https://ipo-id.vercel.app/"
-              target="_blank" rel="noopener noreferrer"
-              class="relative group block overflow-hidden border-b border-slate-200 dark:border-slate-800"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/ipo-anlys-thumb.webp"
-                alt="Smart IPO Analysis Web"
-                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-slate-900/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <span
-                  class="bg-white text-slate-900 font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center text-sm"
-                >
-                  Open Website &rarr;
-                </span>
-              </div>
-            </a>
-
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div
-                  class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 mb-3 uppercase"
-                >
-                  AI Web Application
-                </div>
-                <h4
-                  class="text-xl font-bold mb-3 text-slate-900 dark:text-white"
-                >
-                  Smart IPO Analysis with Gemini AI
-                </h4>
-                <p
-                  class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_ipo_desc"
-                >
-                  A full-stack web application that analyzes IPO prospectus PDFs
-                  using AI. Enables users to upload a prospectus (such as PT
-                  Global Sukses Solusi Tbk - RUNS) and instantly receive
-                  structured insights.
-                </p>
-              </div>
-              <div>
-                <div class="flex gap-2 mt-4 mb-4 flex-wrap">
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >Python</span
-                  >
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >Gemini AI</span
-                  >
-                </div>
-                <a
-                  href="https://ipo-id.vercel.app/"
-                  target="_blank" rel="noopener noreferrer"
-                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md"
-                >
-                  Visit Live Website &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div
-            class="bg-[#F8FAFC] dark:bg-[#0B0F17] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('telkom')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/ppad-thumb.webp"
-                alt="Telkom Dashboard"
-                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <span
-                  class="bg-white text-slate-900 font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center text-sm"
-                >
-                  View Gallery
-                </span>
-              </div>
-            </div>
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div
-                  class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 mb-3 uppercase"
-                >
-                  PT Telekomunikasi Indonesia
-                </div>
-                <h4
-                  class="text-xl font-bold mb-3 text-slate-900 dark:text-white"
-                >
-                  CFU Enterprise Dashboard
-                </h4>
-                <p
-                  class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_telkom_desc"
-                >
-                  Developed a Power BI dashboard for portfolio and profitability
-                  analysis to support the preparation of the 2026 RKAP.
-                </p>
-              </div>
-              <div>
-                <div class="flex gap-2 mt-4 mb-4 flex-wrap">
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >Power BI</span
-                  >
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >Tableau</span
-                  >
-                </div>
-                <button
-                  onclick="openGallery('telkom')"
-                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md cursor-pointer"
-                >
-                  View Dashboard Gallery &rarr;
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="bg-[#F8FAFC] dark:bg-[#0B0F17] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('margaria')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/las-thumb.webp"
-                alt="Accounts Payable Automation"
-                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <span
-                  class="bg-white text-slate-900 font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center text-sm"
-                >
-                  View Gallery
-                </span>
-              </div>
-            </div>
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div
-                  class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 mb-3 uppercase"
-                >
-                  Project Margaria Group
-                </div>
-                <h4
-                  class="text-xl font-bold mb-3 text-slate-900 dark:text-white"
-                >
-                  Accounts Payable Submission Automation
-                </h4>
-                <p
-                  class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_margaria_desc"
-                >
-                  Built the Liability Archive Hub automation system to
-                  accelerate the workflow of preparing and submitting accounts
-                  payable documents.
-                </p>
-              </div>
-              <div>
-                <div class="flex gap-2 mt-4 mb-4 flex-wrap">
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >Ms. Excel</span
-                  >
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >VBA Macros</span
-                  >
-                </div>
-                <button
-                  onclick="openGallery('margaria')"
-                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md cursor-pointer"
-                >
-                  View Workflow Gallery &rarr;
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div
-            class="bg-[#F8FAFC] dark:bg-[#0B0F17] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-          >
-            <a
-              href="https://github.com/wisnuardi22/LocalGuide-Inflation"
-              target="_blank" rel="noopener noreferrer"
-              class="relative group block overflow-hidden border-b border-slate-200 dark:border-slate-800"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/gc-thumb.webp"
-                alt="Global Inflation Dashboard"
-                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-slate-900/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <span
-                  class="bg-white text-slate-900 font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center text-sm"
-                >
-                  View Repository &rarr;
-                </span>
-              </div>
-            </a>
-
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div
-                  class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 mb-3 uppercase"
-                >
-                  IBM SkillBuilds x Hacktiv8
-                </div>
-                <h4
-                  class="text-xl font-bold mb-3 text-slate-900 dark:text-white"
-                >
-                  Global Inflation Dashboard
-                </h4>
-                <p
-                  class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_inflation_desc"
-                >
-                  Conducted data classification and summarization using IBM
-                  Granite to analyze global inflation indicators.
-                </p>
-              </div>
-              <div>
-                <div class="flex gap-2 mt-4 mb-4 flex-wrap">
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >Data Classification</span
-                  >
-                  <span
-                    class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                    >IBM Granite</span
-                  >
-                </div>
-                <a
-                  href="https://github.com/wisnuardi22/LocalGuide-Inflation"
-                  target="_blank" rel="noopener noreferrer"
-                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md"
-                >
-                  View on GitHub &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5: EduTax UNY -->
-          <div
-            class="bg-[#F8FAFC] dark:bg-[#0B0F17] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('EduTax UNY')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/edutax1-thumb.webp"
-                alt="EduTax UNY - Coretax Learning Platform"
-                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <span
-                  class="bg-white text-slate-900 font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center text-sm"
-                >
-                  View Gallery
-                </span>
-              </div>
-            </div>
-
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div
-                  class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 mb-3 uppercase"
-                >
-                  Educational Web Application
-                </div>
-                <h4
-                  class="text-xl font-bold mb-3 text-slate-900 dark:text-white"
-                >
-                  EduTax UNY — Coretax Learning Platform
-                </h4>
-                <p
-                  class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_edutax_desc"
-                >
-                  An educational web application designed to help university students
-                  learn and simulate Indonesia's Coretax tax administration procedures
-                  through an interactive digital learning environment.
-                </p>
-              </div>
-
-              <div class="flex gap-2 mt-4 flex-wrap">
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >HTML</span
-                >
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >JavaScript</span
-                >
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >Coretax</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-         <div
-            class="bg-[#F8FAFC] dark:bg-[#0B0F17] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('Equilife')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/eq1-thumb.webp"
-                alt="Accounts Payable Automation"
-                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-slate-900/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <span
-                  class="bg-white text-slate-900 font-semibold px-4 py-2 rounded-lg shadow-lg flex items-center text-sm"
-                >
-                  View Gallery
-                </span>
-              </div>
-            </div>
-            <div class="p-8 flex-1 flex flex-col justify-between">
-              <div>
-                <div
-                  class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 mb-3 uppercase"
-                >
-                  Personal Project
-                </div>
-                <h4
-                  class="text-xl font-bold mb-3 text-slate-900 dark:text-white"
-                >
-                  Personal Finance Management System
-                </h4>
-                <p
-                  class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed"
-                  data-i18n="proj_equilife_desc"
-                >
-                  Built a personal finance management system to track income, expenses, and savings goals, providing insights for better financial decision-making.
-                </p>
-              </div>
-              <div class="flex gap-2 mt-4 flex-wrap">
-                <span
-                  class="bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs px-3 py-1.5 rounded-md font-medium"
-                  >HTML</span
-                >
-              </div>
-                <a
-                  href="https://github.com/wisnuardi22/Equilife-GitIO/tree/main"
-                  target="_blank" rel="noopener noreferrer"
-                  class="inline-block bg-slate-900 dark:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-700 transition shadow-md"
-                >
-                  View on GitHub &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
+      <!-- ============ TRUST STRIP ============ -->
+      <div class="trust">
+        <div class="wrap trust__inner">
+          <p class="trust__label" data-i18n="trust_label">Internship experience</p>
+          <img src="assets/img/peruri-logo-thumb.webp" alt="Perum Peruri" height="24" loading="lazy" />
+          <img src="assets/img/telkom-logo-thumb.webp" alt="Telkom Indonesia" height="24" loading="lazy" />
+          <img src="assets/img/pln-logo-thumb.webp" alt="PT PLN (Persero)" height="24" loading="lazy" />
+          <img src="assets/img/askrindo-logo-thumb.webp" alt="PT Askrindo" height="24" loading="lazy" />
         </div>
       </div>
-    </section>
 
-    <section
-      id="certificates"
-      class="py-24 bg-[#F8FAFC] dark:bg-[#0B0F17] border-b border-slate-200 dark:border-slate-800"
-    >
-      <div class="max-w-6xl mx-auto px-6">
-        <h3
-          class="text-3xl font-bold text-slate-900 dark:text-white mb-12"
-          data-i18n="cert_title"
-        >
-          Licenses & Certifications
-        </h3>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            class="bg-white dark:bg-[#121824] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('CertifiedIBM')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/ibm-thumb.webp"
-                alt="IBM Certificate"
-                class="w-full h-56 object-contain bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
-              />
-              <div class="p-6">
-                <h4 class="font-bold text-slate-900 dark:text-white mb-2">
-                  Data Classification and Summarization Using IBM Granite
-                </h4>
-                <p class="text-sm text-slate-500 dark:text-slate-400">
-                  IBM SkillsBuild x Hacktiv8
-                </p>
-              </div>
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="sec-head__index">01 — <span data-i18n="nav_about">About</span></span>
+              <h2 data-i18n="about_title">Tidy accounting, useful analysis.</h2>
             </div>
+            <p data-i18n="about_lede">
+              I work where accounting meets analytics: making sure the numbers are right, then presenting them so
+              decisions get easier.
+            </p>
           </div>
 
-          <div
-            class="bg-white dark:bg-[#121824] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('CertifiedSS')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/softskill-thumb.webp"
-                alt="Telkom Certificate"
-                class="w-full h-56 object-contain bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
-              />
-              <div class="p-6">
-                <h4 class="font-bold text-slate-900 dark:text-white mb-2">
-                  Soft Skill Mentoring Digistar Class Intern 2025
-                </h4>
-                <p class="text-sm text-slate-500 dark:text-slate-400">
-                  Telkom Corporate University
-                </p>
-              </div>
+          <div class="about__grid">
+            <div class="about__text">
+              <p data-i18n="about_p1">
+                Background in Accounting (D4) at Universitas Negeri Yogyakarta, with internships at four companies —
+                Peruri, Telkom, PLN, and Askrindo. My work spans reconciliation, document verification, tax
+                calculation, and portfolio profitability dashboards.
+              </p>
+              <p data-i18n="about_p2">
+                I'm comfortable with operational data that isn't tidy yet: tracing discrepancies, restructuring
+                reporting flows, and automating the repetitive parts so the team doesn't do the same work twice.
+              </p>
             </div>
-          </div>
 
-          <div
-            class="bg-white dark:bg-[#121824] rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-xl transition-all duration-300"
-          >
-            <div
-              class="relative group cursor-pointer overflow-hidden border-b border-slate-200 dark:border-slate-800"
-              onclick="openGallery('CertifiedHS')"
-            >
-              <img loading="lazy" decoding="async"
-                src="assets/img/hardskill-thumb.webp"
-                alt="Telkom Certificate"
-                class="w-full h-56 object-contain bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800"
-              />
-              <div class="p-6">
-                <h4 class="font-bold text-slate-900 dark:text-white mb-2">
-                  B2B Mentoring Class (DCI 2025)
-                </h4>
-                <p class="text-sm text-slate-500 dark:text-slate-400">
-                  Telkom Corporate University
-                </p>
+            <dl class="facts">
+              <div>
+                <dt data-i18n="fact_edu">Education</dt>
+                <dd data-i18n="fact_edu_v">D4 Accounting — Universitas Negeri Yogyakarta</dd>
               </div>
-            </div>
+              <div>
+                <dt data-i18n="fact_focus">Focus</dt>
+                <dd data-i18n="fact_focus_v">Financial analysis, reconciliation, reporting</dd>
+              </div>
+              <div>
+                <dt data-i18n="fact_tools">Tools</dt>
+                <dd>Power BI · Tableau · Excel &amp; VBA · SAP · Python</dd>
+              </div>
+              <div>
+                <dt data-i18n="fact_lang">Languages</dt>
+                <dd data-i18n="fact_lang_v">Bahasa Indonesia, English</dd>
+              </div>
+            </dl>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer
-      id="contact"
-      class="bg-slate-900 dark:bg-[#07090E] text-white pt-20 pb-10 border-t border-slate-800"
-    >
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 mb-16">
-        <div>
-          <h3 class="text-3xl font-bold mb-6" data-i18n="footer_goal_title">
-            Where I'm Going
-          </h3>
-          <ul class="space-y-4 text-slate-400">
-            <li class="flex items-start">
-              <span class="text-blue-500 mr-3">✦</span>
-              <span data-i18n="footer_g1"
-                >Growing my expertise in financial analysis and business
-                intelligence.</span
-              >
+      <!-- ============ PROCESS ============ -->
+      <section class="section section--tint" id="process">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="sec-head__index">02 — <span data-i18n="nav_process">Process</span></span>
+              <h2 data-i18n="process_title">How I run an analysis.</h2>
+            </div>
+            <p data-i18n="process_lede">The same five steps every time: from data requirements to a report people can actually use.</p>
+          </div>
+
+          <ol class="process">
+            <li>
+              <span class="process__num">01</span>
+              <h3 data-i18n="p1_title">Discovery</h3>
+              <p data-i18n="p1_desc">Identifying financial needs and required data.</p>
             </li>
-            <li class="flex items-start">
-              <span class="text-blue-500 mr-3">✦</span>
-              <span data-i18n="footer_g2"
-                >Deepening my skills in Power BI, Tableau, and financial
-                systems.</span
-              >
+            <li>
+              <span class="process__num">02</span>
+              <h3 data-i18n="p2_title">Planning</h3>
+              <p data-i18n="p2_desc">Structuring workflows for reporting and reconciliation.</p>
             </li>
-            <li class="flex items-start">
-              <span class="text-blue-500 mr-3">✦</span>
-              <span data-i18n="footer_g3"
-                >Contributing to corporate finance teams, especially in
-                data-driven environments.</span
-              >
+            <li>
+              <span class="process__num">03</span>
+              <h3 data-i18n="p3_title">Research</h3>
+              <p data-i18n="p3_desc">Gathering records and information from operational systems.</p>
             </li>
-          </ul>
-          <p
-            class="mt-8 font-medium text-slate-300 border-l-2 border-blue-500 pl-4"
-            data-i18n="footer_goal_desc"
-          >
-            Long-term goal: Become a financial or data analyst specializing in
-            dashboards and reporting.
-          </p>
+            <li>
+              <span class="process__num">04</span>
+              <h3 data-i18n="p4_title">Optimization</h3>
+              <p data-i18n="p4_desc">Reviewing results and improving data accuracy.</p>
+            </li>
+            <li>
+              <span class="process__num">05</span>
+              <h3 data-i18n="p5_title">Execution</h3>
+              <p data-i18n="p5_desc">Processing transactions and creating reporting dashboards.</p>
+            </li>
+          </ol>
         </div>
+      </section>
 
-        <div class="md:text-right flex flex-col md:items-end justify-center">
-          <h3 class="text-2xl font-bold mb-6" data-i18n="footer_connect">
-            Let's Connect
-          </h3>
-          <a
-            href="mailto:wisnuardinugroho17@gmail.com"
-            class="text-xl text-blue-400 hover:text-blue-300 mb-4 transition font-medium"
-            >wisnuardinugroho17@gmail.com</a
-          >
-          <a
-            href="https://www.linkedin.com/in/wisnu-ardi-nugroho-242204249/"
-            target="_blank" rel="noopener noreferrer"
-            class="text-slate-400 hover:text-white transition"
-            >LinkedIn Profile &rarr;</a
-          >
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="section" id="experience">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="sec-head__index">03 — <span data-i18n="nav_exp">Experience</span></span>
+              <h2 data-i18n="exp_title">Internship experience.</h2>
+            </div>
+            <p data-i18n="exp_lede">Four placements across corporate finance and strategy, from state-owned enterprises to insurance.</p>
+          </div>
+
+          <div class="exp-list">
+            <article class="exp">
+              <div class="exp__aside">
+                <div class="exp__logo"><img src="assets/img/peruri-logo-thumb.webp" alt="Perum Peruri" loading="lazy" /></div>
+                <span class="exp__period">Apr 2026 — Present</span>
+              </div>
+              <div>
+                <h3 class="exp__role">Corporate Strategy and Performance Intern</h3>
+                <p class="exp__org">Perum Peruri (Perusahaan Umum Percetakan Uang Republik Indonesia)</p>
+                <ul>
+                  <li data-i18n="exp_peruri_1">Updated OMTI (Objective, Measurement, Target, and Initiative), a performance management application used to monitor and evaluate divisional performance.</li>
+                  <li data-i18n="exp_peruri_2">Coordinated with cross-divisional teams to validate performance indicators and ensure data accuracy, consistency, and alignment within OMTI.</li>
+                  <li data-i18n="exp_peruri_3">Contributed to the development of Divisional Service Level Agreements (SLA), including service identification, service mapping, and consolidation into the final SLA document.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="exp">
+              <div class="exp__aside">
+                <div class="exp__logo"><img src="assets/img/telkom-logo-thumb.webp" alt="Telkom Indonesia" loading="lazy" /></div>
+                <span class="exp__period">Aug 2025 — Jan 2026</span>
+              </div>
+              <div>
+                <h3 class="exp__role">Enterprise Business Strategy Intern</h3>
+                <p class="exp__org">PT Telekomunikasi Indonesia</p>
+                <ul>
+                  <li data-i18n="exp_telkom_1">Conducted competitor financial analysis and collaborated with the Market Movement team to provide supporting insights for business and competitive analysis.</li>
+                  <li data-i18n="exp_telkom_2">Developed the CFU Enterprise Portfolio Profitability Analysis Dashboard to visualize and analyze Telkom's financial performance against competitors.</li>
+                  <li data-i18n="exp_telkom_3">Contributed to the preparation of the 2026 Corporate Work and Budget Plan (RKAP), including presentation materials and meeting documentation.</li>
+                  <li data-i18n="exp_telkom_4">Supported business review activities for subsidiaries and divisions by assisting in performance analysis and review.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="exp">
+              <div class="exp__aside">
+                <div class="exp__logo"><img src="assets/img/pln-logo-thumb.webp" alt="PT PLN (Persero)" loading="lazy" /></div>
+                <span class="exp__period">Jun 2025 — Jul 2025</span>
+              </div>
+              <div>
+                <h3 class="exp__role">General and Finance Affairs Department Intern</h3>
+                <p class="exp__org">PT PLN (Persero) UP3 Yogyakarta</p>
+                <ul>
+                  <li data-i18n="exp_pln_1">Verified service payment documents to ensure completeness and compliance with internal financial procedures.</li>
+                  <li data-i18n="exp_pln_2">Monitored departmental KPIs and operational performance data through the SAP system.</li>
+                  <li data-i18n="exp_pln_3">Performed daily customer receivables reconciliation through the AP3T system to identify and minimize financial discrepancies.</li>
+                  <li data-i18n="exp_pln_4">Recorded monthly cash expenditure data and maintained financial records through the ApKeu application.</li>
+                  <li data-i18n="exp_pln_5">Managed tax withholding certificates (bukti potong pajak) and supported vendor invoice processing.</li>
+                  <li data-i18n="exp_pln_6">Assisted the Team Leader with accounting administration, ledger checking, and financial reporting preparation.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="exp">
+              <div class="exp__aside">
+                <div class="exp__logo"><img src="assets/img/askrindo-logo-thumb.webp" alt="PT Askrindo" loading="lazy" /></div>
+                <span class="exp__period">Apr 2025 — May 2025</span>
+              </div>
+              <div>
+                <h3 class="exp__role">General and Finance Affairs Department Intern</h3>
+                <p class="exp__org">PT ASKRINDO Yogyakarta Branch</p>
+                <ul>
+                  <li data-i18n="exp_askrindo_1">Performed monthly bank reconciliations, monitored cash balances, and conducted physical cash counts (Cash Opname).</li>
+                  <li data-i18n="exp_askrindo_2">Prepared and reconciled cash and non-cash expenditure reports against employee attendance and operational cost data.</li>
+                  <li data-i18n="exp_askrindo_3">Verified documentation for KUR credit insurance policy cancellations to ensure data completeness and compliance.</li>
+                  <li data-i18n="exp_askrindo_4">Calculated and reconciled monthly tax liabilities, including PPh 21, PPN, and PPh 4(2), to support timely tax reporting.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div
-        class="max-w-6xl mx-auto px-6 text-center text-slate-400 text-sm border-t border-slate-800 pt-8"
-      >
-        <p>© 2026 Wisnu Ardi Nugroho. Accounting | Finance & Data Analytics.</p>
+      <!-- ============ PROJECTS ============ -->
+      <section class="section section--tint" id="projects">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="sec-head__index">04 — <span data-i18n="nav_projects">Projects</span></span>
+              <h2 data-i18n="proj_title">Selected work.</h2>
+            </div>
+            <p data-i18n="proj_lede">Six projects: dashboards, reporting automation, and web apps I built myself.</p>
+          </div>
+
+          <div class="proj-grid">
+            <!-- 1 -->
+            <article class="card">
+              <a class="card__media" href="https://ipo-id.vercel.app/" target="_blank" rel="noopener noreferrer" data-hint="Open website">
+                <img src="assets/img/ipo-anlys-thumb.webp" alt="Smart IPO Analysis web app" loading="lazy" width="900" height="563" />
+              </a>
+              <div class="card__body">
+                <p class="card__cat" data-i18n="cat_ai">AI web application</p>
+                <h3>Smart IPO Analysis with Gemini AI</h3>
+                <p data-i18n="proj_ipo_desc">A full-stack web application that analyzes IPO prospectus PDFs using AI. Enables users to upload a prospectus (such as PT Global Sukses Solusi Tbk - RUNS) and instantly receive structured insights.</p>
+                <p class="card__tags"><span>Python</span><span>Gemini AI</span></p>
+                <p class="card__foot">
+                  <a class="link-arrow" href="https://ipo-id.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="link_visit">Visit live site</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h13m0 0-5-5m5 5-5 5" /></svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="card">
+              <button class="card__media" type="button" onclick="openGallery('telkom')" data-hint="View gallery">
+                <img src="assets/img/ppad-thumb.webp" alt="CFU Enterprise dashboard" loading="lazy" width="900" height="563" />
+              </button>
+              <div class="card__body">
+                <p class="card__cat">PT Telekomunikasi Indonesia</p>
+                <h3>CFU Enterprise Dashboard</h3>
+                <p data-i18n="proj_telkom_desc">Developed a Power BI dashboard for portfolio and profitability analysis to support the preparation of the 2026 RKAP.</p>
+                <p class="card__tags"><span>Power BI</span><span>Tableau</span></p>
+                <p class="card__foot">
+                  <button class="link-arrow" type="button" onclick="openGallery('telkom')">
+                    <span data-i18n="link_gallery">View gallery</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h13m0 0-5-5m5 5-5 5" /></svg>
+                  </button>
+                </p>
+              </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="card">
+              <button class="card__media" type="button" onclick="openGallery('margaria')" data-hint="View gallery">
+                <img src="assets/img/las-thumb.webp" alt="Accounts payable automation workflow" loading="lazy" width="900" height="563" />
+              </button>
+              <div class="card__body">
+                <p class="card__cat">Project Margaria Group</p>
+                <h3>Accounts Payable Submission Automation</h3>
+                <p data-i18n="proj_margaria_desc">Built the Liability Archive Hub automation system to accelerate the workflow of preparing and submitting accounts payable documents.</p>
+                <p class="card__tags"><span>Ms. Excel</span><span>VBA Macros</span></p>
+                <p class="card__foot">
+                  <button class="link-arrow" type="button" onclick="openGallery('margaria')">
+                    <span data-i18n="link_gallery">View gallery</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h13m0 0-5-5m5 5-5 5" /></svg>
+                  </button>
+                </p>
+              </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="card">
+              <a class="card__media" href="https://github.com/wisnuardi22/LocalGuide-Inflation" target="_blank" rel="noopener noreferrer" data-hint="Open repository">
+                <img src="assets/img/gc-thumb.webp" alt="Global inflation dashboard" loading="lazy" width="900" height="563" />
+              </a>
+              <div class="card__body">
+                <p class="card__cat">IBM SkillsBuild x Hacktiv8</p>
+                <h3>Global Inflation Dashboard</h3>
+                <p data-i18n="proj_inflation_desc">Conducted data classification and summarization using IBM Granite to analyze global inflation indicators.</p>
+                <p class="card__tags"><span>Data classification</span><span>IBM Granite</span></p>
+                <p class="card__foot">
+                  <a class="link-arrow" href="https://github.com/wisnuardi22/LocalGuide-Inflation" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="link_repo">View repository</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h13m0 0-5-5m5 5-5 5" /></svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="card">
+              <button class="card__media" type="button" onclick="openGallery('EduTax UNY')" data-hint="View gallery">
+                <img src="assets/img/edutax1-thumb.webp" alt="EduTax UNY Coretax learning platform" loading="lazy" width="900" height="563" />
+              </button>
+              <div class="card__body">
+                <p class="card__cat" data-i18n="cat_edu">Educational web application</p>
+                <h3>EduTax UNY — Coretax Learning Platform</h3>
+                <p data-i18n="proj_edutax_desc">An educational web application designed to help university students learn and simulate Indonesia's Coretax tax administration procedures through an interactive digital learning environment.</p>
+                <p class="card__tags"><span>HTML</span><span>JavaScript</span><span>Coretax</span></p>
+                <p class="card__foot">
+                  <button class="link-arrow" type="button" onclick="openGallery('EduTax UNY')">
+                    <span data-i18n="link_gallery">View gallery</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h13m0 0-5-5m5 5-5 5" /></svg>
+                  </button>
+                </p>
+              </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="card">
+              <button class="card__media" type="button" onclick="openGallery('Equilife')" data-hint="View gallery">
+                <img src="assets/img/eq1-thumb.webp" alt="Personal finance management system" loading="lazy" width="900" height="563" />
+              </button>
+              <div class="card__body">
+                <p class="card__cat" data-i18n="cat_personal">Personal project</p>
+                <h3>Personal Finance Management System</h3>
+                <p data-i18n="proj_equilife_desc">Built a personal finance management system to track income, expenses, and savings goals, providing insights for better financial decision-making.</p>
+                <p class="card__tags"><span>HTML</span><span>JavaScript</span></p>
+                <p class="card__foot">
+                  <a class="link-arrow" href="https://github.com/wisnuardi22/Equilife-GitIO/tree/main" target="_blank" rel="noopener noreferrer">
+                    <span data-i18n="link_repo">View repository</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h13m0 0-5-5m5 5-5 5" /></svg>
+                  </a>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CERTIFICATES ============ -->
+      <section class="section" id="certificates">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="sec-head__index">05 — <span data-i18n="nav_certs">Certificates</span></span>
+              <h2 data-i18n="cert_title">Licenses &amp; certifications.</h2>
+            </div>
+            <p data-i18n="cert_lede">Data analytics training and mentoring programs I completed.</p>
+          </div>
+
+          <div class="cert-grid">
+            <button class="cert" type="button" onclick="openGallery('CertifiedIBM')">
+              <div class="cert__media"><img src="assets/img/ibm-thumb.webp" alt="IBM Granite certificate" loading="lazy" /></div>
+              <div class="cert__body">
+                <h3>Data Classification and Summarization Using IBM Granite</h3>
+                <p>IBM SkillsBuild x Hacktiv8</p>
+              </div>
+            </button>
+            <button class="cert" type="button" onclick="openGallery('CertifiedSS')">
+              <div class="cert__media"><img src="assets/img/softskill-thumb.webp" alt="Soft skill mentoring certificate" loading="lazy" /></div>
+              <div class="cert__body">
+                <h3>Soft Skill Mentoring — Digistar Class Intern 2025</h3>
+                <p>Telkom Corporate University</p>
+              </div>
+            </button>
+            <button class="cert" type="button" onclick="openGallery('CertifiedHS')">
+              <div class="cert__media"><img src="assets/img/hardskill-thumb.webp" alt="B2B mentoring certificate" loading="lazy" /></div>
+              <div class="cert__body">
+                <h3>B2B Mentoring Class (DCI 2025)</h3>
+                <p>Telkom Corporate University</p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="contact" id="contact">
+        <div class="wrap contact__grid">
+          <div>
+            <p class="eyebrow contact__kicker" data-i18n="contact_kicker">Contact</p>
+            <h2 data-i18n="contact_title">Let's talk numbers and reports.</h2>
+            <a class="contact__mail" href="mailto:wisnuardinugroho17@gmail.com">wisnuardinugroho17@gmail.com</a>
+            <p class="contact__note" data-i18n="contact_note">
+              Open to roles in financial analysis, accounting, and business intelligence — and to conversations about
+              dashboards and reporting automation.
+            </p>
+            <div class="contact__actions">
+              <a class="btn btn--invert" href="mailto:wisnuardinugroho17@gmail.com" data-i18n="btn_email">Send an email</a>
+              <a class="link-arrow link-arrow--light" href="https://www.linkedin.com/in/wisnu-ardi-nugroho-242204249/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7m0 0H9m8 0v8" /></svg>
+              </a>
+              <a class="link-arrow link-arrow--light" href="https://github.com/wisnuardi22" target="_blank" rel="noopener noreferrer">
+                GitHub
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7m0 0H9m8 0v8" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__goals">
+            <h3 data-i18n="contact_goal_title">Where I'm going</h3>
+            <ul>
+              <li><span>01</span><span data-i18n="footer_g1">Growing my expertise in financial analysis and business intelligence.</span></li>
+              <li><span>02</span><span data-i18n="footer_g2">Deepening my skills in Power BI, Tableau, and financial systems.</span></li>
+              <li><span>03</span><span data-i18n="footer_g3">Contributing to corporate finance teams, especially in data-driven environments.</span></li>
+            </ul>
+            <p class="contact__note contact__note--tight" data-i18n="footer_goal_desc">
+              Long-term goal: become a financial or data analyst specializing in dashboards and reporting.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p>© 2026 Wisnu Ardi Nugroho</p>
+        <nav aria-label="Footer">
+          <a href="mailto:wisnuardinugroho17@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/wisnu-ardi-nugroho-242204249/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/wisnuardi22" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="cv-wisnu-ardi-nugroho.pdf" target="_blank" rel="noopener noreferrer" data-i18n="btn_cv">Download CV</a>
+        </nav>
       </div>
     </footer>
 
-    <!-- Modal Gallery -->
-    <div
-      id="galleryModal"
-      class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center opacity-0 transition-opacity duration-300"
-    >
-      <button
-        onclick="closeGallery()" aria-label="Tutup galeri"
-        class="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-gray-300 z-50 transition-transform hover:scale-110 cursor-pointer"
-      >
-        <svg
-          class="w-10 h-10"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"
-          ></path>
-        </svg>
+    <!-- ============ GALLERY ============ -->
+    <div class="gallery" id="gallery" role="dialog" aria-modal="true" aria-label="Project gallery">
+      <button class="gallery__btn gallery__close" type="button" onclick="closeGallery()" aria-label="Close gallery">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6 6 18" /></svg>
       </button>
-      <button
-        onclick="changeImage(-1)" aria-label="Gambar sebelumnya"
-        class="absolute left-2 md:left-10 text-white hover:text-gray-300 z-50 p-2 transition-transform hover:scale-110 cursor-pointer"
-      >
-        <svg
-          class="w-12 h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7"
-          ></path>
-        </svg>
+      <button class="gallery__btn gallery__prev" type="button" onclick="changeImage(-1)" aria-label="Previous image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7" /></svg>
       </button>
-      <img
-        id="modalImage"
-        alt="Pratinjau gambar proyek"
-        class="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl transition-all duration-300 ease-in-out"
-      />
-      <button
-        onclick="changeImage(1)" aria-label="Gambar berikutnya"
-        class="absolute right-2 md:right-10 text-white hover:text-gray-300 z-50 p-2 transition-transform hover:scale-110 cursor-pointer"
-      >
-        <svg
-          class="w-12 h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 5l7 7-7 7"
-          ></path>
-        </svg>
+      <img id="gallery-image" alt="Project preview" />
+      <button class="gallery__btn gallery__next" type="button" onclick="changeImage(1)" aria-label="Next image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
       </button>
-      <div
-        id="imageCounter"
-        class="absolute bottom-6 md:bottom-10 text-white font-medium text-lg tracking-widest bg-black/50 px-6 py-2 rounded-full backdrop-blur-md"
-      >
-        1 / 1
-      </div>
+      <p class="gallery__count" id="gallery-count">1 / 1</p>
     </div>
 
-    <!-- Script JavaScript Lengkap -->
     <script>
       // ==========================================
-      // 1. KAMUS BAHASA (ID & EN)
+      // 1. TRANSLATIONS (ID / EN)
       // ==========================================
       const translations = {
         id: {
-          nav_who: "Tentang Saya",
-          nav_skills: "Keahlian & Proses",
+          nav_about: "Tentang",
+          nav_process: "Proses",
           nav_exp: "Pengalaman",
           nav_projects: "Proyek",
           nav_certs: "Sertifikat",
-          hero_subtitle: "Akuntansi, Keuangan & Analisis Data",
-          hero_title:
-            "Mengubah data keuangan kompleks menjadi dashboard interaktif.",
-          hero_desc1:
-            "Lulusan Akuntansi Universitas Negeri Yogyakarta dengan pengalaman magang langsung di bidang keuangan korporat lintas BUMN.",
-          hero_desc2:
-            "Saya mengembangkan alur kerja dan dashboard analisis keuangan untuk mendukung pengambilan keputusan. Keahlian saya mencakup operasi akuntansi, pelaporan yang akurat, serta analisis data.",
-          btn_projects: "Lihat Proyek",
-          btn_contact: "Hubungi Saya",
+          hero_eyebrow: "Akuntansi · Keuangan · Analitik Data",
+          hero_title: "Mengubah data keuangan yang rumit menjadi laporan yang <em>jernih</em>.",
+          hero_lede:
+            "Lulusan D4 Akuntansi Universitas Negeri Yogyakarta. Pengalaman magang di Peruri, Telkom, PLN, dan Askrindo dalam analisis keuangan, rekonsiliasi, dan dashboard pelaporan.",
+          meta_status: "Terbuka untuk peluang",
+          meta_loc: "Yogyakarta, Indonesia",
+          meta_focus: "Analisis keuangan & pelaporan",
+          btn_projects: "Lihat proyek",
           btn_cv: "Unduh CV",
-          skills_title: "Proses Kerja Saya",
-          skills_desc:
-            "Pendekatan sistematis dalam menyelesaikan tantangan analisis dan pelaporan.",
+          btn_contact: "Hubungi saya",
+          btn_email: "Kirim email",
+          trust_label: "Pengalaman magang",
+          about_title: "Akuntansi yang rapi, analisis yang berguna.",
+          about_lede:
+            "Saya bekerja di persimpangan akuntansi dan analitik: memastikan angka benar, lalu menyajikannya agar mudah dipakai untuk mengambil keputusan.",
+          about_p1:
+            "Latar belakang D4 Akuntansi Universitas Negeri Yogyakarta, dengan pengalaman magang di empat perusahaan — Peruri, Telkom, PLN, dan Askrindo. Pekerjaan saya mencakup rekonsiliasi, verifikasi dokumen, perhitungan pajak, hingga penyusunan dashboard portofolio dan profitabilitas.",
+          about_p2:
+            "Saya nyaman bekerja dengan data operasional yang belum rapi: menelusuri selisih, menyusun ulang alur pelaporan, lalu mengotomasi bagian yang berulang agar tim tidak mengerjakannya dua kali.",
+          fact_edu: "Pendidikan",
+          fact_edu_v: "D4 Akuntansi — Universitas Negeri Yogyakarta",
+          fact_focus: "Fokus",
+          fact_focus_v: "Analisis keuangan, rekonsiliasi, pelaporan",
+          fact_tools: "Perangkat",
+          fact_lang: "Bahasa",
+          fact_lang_v: "Bahasa Indonesia, Inggris",
+          process_title: "Cara saya mengerjakan analisis.",
+          process_lede: "Lima langkah yang sama setiap kali: dari kebutuhan data sampai laporan yang bisa dipakai.",
           p1_title: "Penemuan",
-          p1_desc:
-            "Mengidentifikasi kebutuhan finansial dan data yang diperlukan.",
+          p1_desc: "Mengidentifikasi kebutuhan finansial dan data yang diperlukan.",
           p2_title: "Perencanaan",
           p2_desc: "Menyusun alur kerja pelaporan dan rekonsiliasi.",
           p3_title: "Riset",
-          p3_desc:
-            "Mengumpulkan catatan dan informasi dari sistem operasional.",
+          p3_desc: "Mengumpulkan catatan dan informasi dari sistem operasional.",
           p4_title: "Optimalisasi",
           p4_desc: "Meninjau hasil dan meningkatkan akurasi data.",
           p5_title: "Eksekusi",
           p5_desc: "Memproses transaksi dan membuat dashboard pelaporan.",
-          exp_title: "Pengalaman Magang",
+          exp_title: "Pengalaman magang.",
+          exp_lede: "Empat penempatan di sektor keuangan dan strategi korporat, dari BUMN hingga perusahaan asuransi.",
           exp_peruri_1:
             "Memperbarui OMTI (Objective, Measurement, Target, and Initiative), aplikasi manajemen kinerja yang digunakan untuk memantau dan mengevaluasi kinerja divisi.",
           exp_peruri_2:
@@ -1257,27 +632,23 @@
             "Berkontribusi dalam penyusunan materi Rencana Kerja dan Anggaran Perusahaan (RKAP) 2026, termasuk materi presentasi dan dokumentasi rapat.",
           exp_telkom_4:
             "Mendukung kegiatan business review untuk anak perusahaan dan divisi dengan membantu analisis dan peninjauan kinerja.",
-          exp_pln_1:
-            "Memverifikasi dokumen persyaratan pembayaran layanan untuk memastikan kepatuhan.",
-          exp_pln_2:
-            "Mengevaluasi KPI dan memantau kinerja melalui sistem SAP.",
-          exp_pln_3:
-            "Memeriksa dan merekonsiliasi piutang pelanggan dalam sistem AP3T.",
-          exp_pln_4:
-            "Mencatat nota keuangan dan menginput pengeluaran kas bulanan ke ApKeu.",
-          exp_pln_5:
-            "Mengelola sertifikat pemotongan pajak dan memproses unggahan faktur vendor.",
-          exp_pln_6:
-            "Membantu Team Leader menyelesaikan siklus penuh tugas pajak dan akuntansi.",
+          exp_pln_1: "Memverifikasi dokumen persyaratan pembayaran layanan untuk memastikan kepatuhan.",
+          exp_pln_2: "Mengevaluasi KPI dan memantau kinerja melalui sistem SAP.",
+          exp_pln_3: "Memeriksa dan merekonsiliasi piutang pelanggan dalam sistem AP3T.",
+          exp_pln_4: "Mencatat nota keuangan dan menginput pengeluaran kas bulanan ke ApKeu.",
+          exp_pln_5: "Mengelola sertifikat pemotongan pajak dan memproses unggahan faktur vendor.",
+          exp_pln_6: "Membantu Team Leader menyelesaikan siklus penuh tugas pajak dan akuntansi.",
           exp_askrindo_1:
             "Melakukan rekonsiliasi bank, memantau kas di bank, dan melakukan perhitungan kas fisik (Cash Opname).",
-          exp_askrindo_2:
-            "Mengonsolidasikan laporan pengeluaran kas dan non-kas beserta data absensi karyawan.",
-          exp_askrindo_3:
-            "Memverifikasi pembatalan polis asuransi kredit KUR untuk keakuratan data.",
+          exp_askrindo_2: "Mengonsolidasikan laporan pengeluaran kas dan non-kas beserta data absensi karyawan.",
+          exp_askrindo_3: "Memverifikasi pembatalan polis asuransi kredit KUR untuk keakuratan data.",
           exp_askrindo_4:
             "Menghitung kewajiban pajak termasuk PPh 21, PPN, dan PPh Pasal 4(2) untuk memastikan kepatuhan pajak.",
-          proj_title: "Pameran Proyek",
+          proj_title: "Karya pilihan.",
+          proj_lede: "Enam proyek: dashboard, otomasi pelaporan, dan aplikasi web yang saya bangun sendiri.",
+          cat_ai: "Aplikasi web AI",
+          cat_edu: "Aplikasi web edukasi",
+          cat_personal: "Proyek pribadi",
           proj_ipo_desc:
             "Aplikasi web full-stack yang menganalisis PDF prospektus IPO menggunakan AI. Memungkinkan pengguna mengunggah prospektus (seperti PT Global Sukses Solusi Tbk - RUNS) dan langsung menerima wawasan terstruktur.",
           proj_telkom_desc:
@@ -1288,49 +659,70 @@
             "Melakukan klasifikasi dan ringkasan data menggunakan IBM Granite untuk menganalisis indikator inflasi global.",
           proj_edutax_desc:
             "Aplikasi web edukasi yang dirancang untuk membantu mahasiswa mempelajari dan mensimulasikan prosedur administrasi perpajakan Coretax Indonesia melalui lingkungan pembelajaran digital yang interaktif.",
-          cert_title: "Lisensi & Sertifikasi",
-          footer_goal_title: "Tujuan & Arah Karier",
-          footer_g1:
-            "Mengembangkan keahlian dalam analisis keuangan dan business intelligence.",
-          footer_g2:
-            "Memperdalam keterampilan dalam Power BI, Tableau, dan sistem keuangan.",
-          footer_g3:
-            "Berkontribusi pada tim keuangan korporat, terutama di lingkungan berbasis data.",
+          proj_equilife_desc:
+            "Sistem manajemen keuangan pribadi untuk memantau pemasukan, pengeluaran, dan target tabungan agar keputusan keuangan lebih terukur.",
+          link_visit: "Buka situs",
+          link_gallery: "Lihat galeri",
+          link_repo: "Lihat repositori",
+          cert_title: "Lisensi & sertifikasi.",
+          cert_lede: "Pelatihan analitik data dan program mentoring yang saya selesaikan.",
+          contact_kicker: "Kontak",
+          contact_title: "Mari bicara soal angka dan laporan.",
+          contact_note:
+            "Terbuka untuk posisi analis keuangan, akuntansi, dan business intelligence — serta diskusi seputar dashboard dan otomasi pelaporan.",
+          contact_goal_title: "Arah karier",
+          footer_g1: "Mengembangkan keahlian dalam analisis keuangan dan business intelligence.",
+          footer_g2: "Memperdalam keterampilan dalam Power BI, Tableau, dan sistem keuangan.",
+          footer_g3: "Berkontribusi pada tim keuangan korporat, terutama di lingkungan berbasis data.",
           footer_goal_desc:
-            "Tujuan jangka panjang: Menjadi analis keuangan atau data yang mengkhususkan diri pada dashboard dan pelaporan.",
-          footer_connect: "Mari Terhubung",
+            "Tujuan jangka panjang: menjadi analis keuangan atau data yang mengkhususkan diri pada dashboard dan pelaporan.",
         },
         en: {
-          nav_who: "Who I Am",
-          nav_skills: "Skills & Process",
+          nav_about: "About",
+          nav_process: "Process",
           nav_exp: "Experience",
           nav_projects: "Projects",
           nav_certs: "Certificates",
-          hero_subtitle: "Accounting, Finance & Data Analytics",
-          hero_title:
-            "Transforming complex financial data into interactive dashboards.",
-          hero_desc1:
-            "Accounting graduate from Yogyakarta State University with hands-on internship experience in corporate finance across state-owned enterprises.",
-          hero_desc2:
-            "I develop financial analysis workflows and dashboards that support decision-making. My expertise in accounting operations and data analytics enables me to deliver accurate reporting, efficient processes, and clear financial insights.",
-          btn_projects: "View Projects",
-          btn_contact: "Contact Me",
+          hero_eyebrow: "Accounting · Finance · Data Analytics",
+          hero_title: "Turning complex financial data into reports that stay <em>clear</em>.",
+          hero_lede:
+            "Accounting graduate from Universitas Negeri Yogyakarta. Internship experience at Peruri, Telkom, PLN, and Askrindo across financial analysis, reconciliation, and reporting dashboards.",
+          meta_status: "Open to opportunities",
+          meta_loc: "Yogyakarta, Indonesia",
+          meta_focus: "Financial analysis & reporting",
+          btn_projects: "View projects",
           btn_cv: "Download CV",
-          skills_title: "My Process",
-          skills_desc:
-            "A systematic approach to solving analysis and reporting challenges.",
+          btn_contact: "Get in touch",
+          btn_email: "Send an email",
+          trust_label: "Internship experience",
+          about_title: "Tidy accounting, useful analysis.",
+          about_lede:
+            "I work where accounting meets analytics: making sure the numbers are right, then presenting them so decisions get easier.",
+          about_p1:
+            "Background in Accounting (D4) at Universitas Negeri Yogyakarta, with internships at four companies — Peruri, Telkom, PLN, and Askrindo. My work spans reconciliation, document verification, tax calculation, and portfolio profitability dashboards.",
+          about_p2:
+            "I'm comfortable with operational data that isn't tidy yet: tracing discrepancies, restructuring reporting flows, and automating the repetitive parts so the team doesn't do the same work twice.",
+          fact_edu: "Education",
+          fact_edu_v: "D4 Accounting — Universitas Negeri Yogyakarta",
+          fact_focus: "Focus",
+          fact_focus_v: "Financial analysis, reconciliation, reporting",
+          fact_tools: "Tools",
+          fact_lang: "Languages",
+          fact_lang_v: "Bahasa Indonesia, English",
+          process_title: "How I run an analysis.",
+          process_lede: "The same five steps every time: from data requirements to a report people can actually use.",
           p1_title: "Discovery",
           p1_desc: "Identifying financial needs and required data.",
           p2_title: "Planning",
           p2_desc: "Structuring workflows for reporting and reconciliation.",
           p3_title: "Research",
-          p3_desc:
-            "Gathering records and information from operational systems.",
+          p3_desc: "Gathering records and information from operational systems.",
           p4_title: "Optimization",
           p4_desc: "Reviewing results and improving data accuracy.",
           p5_title: "Execution",
           p5_desc: "Processing transactions and creating reporting dashboards.",
-          exp_title: "Internship Experience",
+          exp_title: "Internship experience.",
+          exp_lede: "Four placements across corporate finance and strategy, from state-owned enterprises to insurance.",
           exp_peruri_1:
             "Updated OMTI (Objective, Measurement, Target, and Initiative), a performance management application used to monitor and evaluate divisional performance.",
           exp_peruri_2:
@@ -1345,27 +737,26 @@
             "Contributed to the preparation of the 2026 Corporate Work and Budget Plan (RKAP), including presentation materials and meeting documentation.",
           exp_telkom_4:
             "Supported business review activities for subsidiaries and divisions by assisting in performance analysis and review.",
-          exp_pln_1:
-            "Verifying service payment requirement documents to ensure compliance.",
-          exp_pln_2:
-            "Evaluating KPIs and monitoring performance through the SAP system.",
+          exp_pln_1: "Verified service payment documents to ensure completeness and compliance with internal financial procedures.",
+          exp_pln_2: "Monitored departmental KPIs and operational performance data through the SAP system.",
           exp_pln_3:
-            "Checking and reconciling customer receivables within the AP3T system.",
-          exp_pln_4:
-            "Recording financial notes and inputting monthly cash expenditures into ApKeu.",
-          exp_pln_5:
-            "Managing tax withholding certificates and processing vendor invoice uploads.",
-          exp_pln_6:
-            "Assisting the Team Leader in completing the full cycle of tax and accounting tasks.",
+            "Performed daily customer receivables reconciliation through the AP3T system to identify and minimize financial discrepancies.",
+          exp_pln_4: "Recorded monthly cash expenditure data and maintained financial records through the ApKeu application.",
+          exp_pln_5: "Managed tax withholding certificates (bukti potong pajak) and supported vendor invoice processing.",
+          exp_pln_6: "Assisted the Team Leader with accounting administration, ledger checking, and financial reporting preparation.",
           exp_askrindo_1:
-            "Performing bank statement reconciliations, monitoring cash in bank, and conducting physical cash counts.",
+            "Performed monthly bank reconciliations, monitored cash balances, and conducted physical cash counts (Cash Opname).",
           exp_askrindo_2:
-            "Consolidating cash and non-cash expenditure reports alongside employee attendance data.",
+            "Prepared and reconciled cash and non-cash expenditure reports against employee attendance and operational cost data.",
           exp_askrindo_3:
-            "Verifying the cancellation of KUR credit insurance policies for accuracy.",
+            "Verified documentation for KUR credit insurance policy cancellations to ensure data completeness and compliance.",
           exp_askrindo_4:
-            "Calculating tax liabilities including PPh 21, PPN, and PPh Article 4(2) to ensure tax compliance.",
-          proj_title: "Project Showcase",
+            "Calculated and reconciled monthly tax liabilities, including PPh 21, PPN, and PPh 4(2), to support timely tax reporting.",
+          proj_title: "Selected work.",
+          proj_lede: "Six projects: dashboards, reporting automation, and web apps I built myself.",
+          cat_ai: "AI web application",
+          cat_edu: "Educational web application",
+          cat_personal: "Personal project",
           proj_ipo_desc:
             "A full-stack web application that analyzes IPO prospectus PDFs using AI. Enables users to upload a prospectus (such as PT Global Sukses Solusi Tbk - RUNS) and instantly receive structured insights.",
           proj_telkom_desc:
@@ -1376,38 +767,43 @@
             "Conducted data classification and summarization using IBM Granite to analyze global inflation indicators.",
           proj_edutax_desc:
             "An educational web application designed to help university students learn and simulate Indonesia's Coretax tax administration procedures through an interactive digital learning environment.",
-          cert_title: "Licenses & Certifications",
-          footer_goal_title: "Where I'm Going",
-          footer_g1:
-            "Growing my expertise in financial analysis and business intelligence.",
-          footer_g2:
-            "Deepening my skills in Power BI, Tableau, and financial systems.",
-          footer_g3:
-            "Contributing to corporate finance teams, especially in data-driven environments.",
+          proj_equilife_desc:
+            "A personal finance system to track income, expenses, and savings goals so financial decisions stay measurable.",
+          link_visit: "Visit live site",
+          link_gallery: "View gallery",
+          link_repo: "View repository",
+          cert_title: "Licenses & certifications.",
+          cert_lede: "Data analytics training and mentoring programs I completed.",
+          contact_kicker: "Contact",
+          contact_title: "Let's talk numbers and reports.",
+          contact_note:
+            "Open to roles in financial analysis, accounting, and business intelligence — and to conversations about dashboards and reporting automation.",
+          contact_goal_title: "Where I'm going",
+          footer_g1: "Growing my expertise in financial analysis and business intelligence.",
+          footer_g2: "Deepening my skills in Power BI, Tableau, and financial systems.",
+          footer_g3: "Contributing to corporate finance teams, especially in data-driven environments.",
           footer_goal_desc:
-            "Long-term goal: Become a financial or data analyst specializing in dashboards and reporting.",
-          footer_connect: "Let's Connect",
+            "Long-term goal: become a financial or data analyst specializing in dashboards and reporting.",
         },
       };
 
-      // Konten HTML ditulis dalam bahasa Inggris, jadi default = "en".
-      // Pilihan bahasa disimpan di localStorage agar tidak reset tiap reload.
       let currentLang = "en";
 
       function applyLanguage(lang) {
         currentLang = lang;
         document.documentElement.lang = lang;
         const btn = document.getElementById("lang-btn");
-        // Tombol menampilkan bahasa TUJUAN (yang akan dipakai setelah diklik)
-        btn.innerText = lang === "id" ? "🌐 EN" : "🌐 ID";
-        btn.setAttribute(
-          "aria-label",
-          lang === "id" ? "Switch page to English" : "Ganti bahasa ke Indonesia"
-        );
+        btn.innerText = lang === "id" ? "EN" : "ID";
+        btn.setAttribute("aria-label", lang === "id" ? "Switch page to English" : "Ganti bahasa ke Indonesia");
+        const dict = translations[lang] || {};
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           const key = el.getAttribute("data-i18n");
-          const dict = translations[lang] || {};
-          if (dict[key]) el.innerText = dict[key];
+          if (!dict[key]) return;
+          if (el.dataset.i18nHtml === "true") {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
         });
         localStorage.setItem("lang", lang);
       }
@@ -1416,65 +812,33 @@
         applyLanguage(currentLang === "id" ? "en" : "id");
       }
 
-      // Menu navigasi mobile
-      function toggleMenu() {
-        const menu = document.getElementById("mobile-menu");
-        const open = menu.classList.contains("hidden");
-        menu.classList.toggle("hidden", !open);
-        document.getElementById("menu-icon-open").classList.toggle("hidden", open);
-        document.getElementById("menu-icon-close").classList.toggle("hidden", !open);
-        document
-          .getElementById("menu-btn")
-          .setAttribute("aria-expanded", open ? "true" : "false");
-      }
-
-      function closeMenu() {
-        const menu = document.getElementById("mobile-menu");
-        if (menu && !menu.classList.contains("hidden")) toggleMenu();
-      }
-
       // ==========================================
-      // 2. LOGIKA TEMA (DARK / LIGHT MODE)
+      // 2. THEME
       // ==========================================
       function toggleTheme() {
         const html = document.documentElement;
-        const themeBtn = document.getElementById("theme-btn");
-        const currentTheme = html.getAttribute("data-theme");
-
-        if (currentTheme === "light") {
-          html.setAttribute("data-theme", "dark");
-          themeBtn.innerText = "☀️";
-          localStorage.setItem("theme", "dark");
-        } else {
-          html.setAttribute("data-theme", "light");
-          themeBtn.innerText = "🌙";
-          localStorage.setItem("theme", "light");
-        }
+        const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
       }
 
-      window.addEventListener("DOMContentLoaded", () => {
-        const savedTheme = localStorage.getItem("theme") || "light";
-        document.documentElement.setAttribute("data-theme", savedTheme);
-        document.getElementById("theme-btn").innerText =
-          savedTheme === "dark" ? "☀️" : "🌙";
+      // ==========================================
+      // 3. MOBILE MENU
+      // ==========================================
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-nav");
+        const open = !menu.classList.contains("is-open");
+        menu.classList.toggle("is-open", open);
+        document.getElementById("menu-btn").setAttribute("aria-expanded", String(open));
+      }
 
-        // Bahasa: pakai pilihan tersimpan; kalau belum ada, ikuti bahasa browser
-        const savedLang = localStorage.getItem("lang");
-        if (savedLang === "id" || savedLang === "en") {
-          applyLanguage(savedLang);
-        } else {
-          const browserLang = (navigator.language || "en").toLowerCase();
-          applyLanguage(browserLang.startsWith("id") ? "id" : "en");
-        }
-
-        // Tutup menu mobile kalau layar dibesarkan
-        window.addEventListener("resize", () => {
-          if (window.innerWidth >= 768) closeMenu();
-        });
-      });
+      function closeMenu() {
+        const menu = document.getElementById("mobile-nav");
+        if (menu.classList.contains("is-open")) toggleMenu();
+      }
 
       // ==========================================
-      // 3. LOGIKA MODAL & PROFIL SLIDER
+      // 4. GALLERY
       // ==========================================
       const projectData = {
         telkom: ["assets/img/ppad-full.webp", "assets/img/ppad2-full.webp", "assets/img/ppad3-full.webp"],
@@ -1505,12 +869,7 @@
           "assets/img/smes12-full.webp",
           "assets/img/smes13-full.webp",
         ],
-        Equilife: [
-          "assets/img/eq1-full.webp",
-          "assets/img/eq2-full.webp",
-          "assets/img/eq3-full.webp",
-          "assets/img/eq4-full.webp",
-        ],
+        Equilife: ["assets/img/eq1-full.webp", "assets/img/eq2-full.webp", "assets/img/eq3-full.webp", "assets/img/eq4-full.webp"],
         CertifiedIBM: ["assets/img/ibm-full.webp"],
         CertifiedSS: ["assets/img/softskill-full.webp"],
         CertifiedHS: ["assets/img/hardskill-full.webp"],
@@ -1519,105 +878,130 @@
 
       let currentProject = "";
       let currentIndex = 0;
-      const modal = document.getElementById("galleryModal");
-      const modalImg = document.getElementById("modalImage");
-      const counter = document.getElementById("imageCounter");
+      const gallery = document.getElementById("gallery");
+      const galleryImg = document.getElementById("gallery-image");
+      const galleryCount = document.getElementById("gallery-count");
 
-      function openGallery(projectId) {
-        currentProject = projectId;
+      function openGallery(id) {
+        if (!projectData[id]) return;
+        currentProject = id;
         currentIndex = 0;
         updateModal();
-        modal.classList.remove("hidden");
-        setTimeout(() => {
-          modal.classList.remove("opacity-0");
-          modal.classList.add("opacity-100");
-        }, 10);
+        gallery.classList.add("is-open");
+        requestAnimationFrame(() => gallery.classList.add("is-visible"));
         document.body.style.overflow = "hidden";
       }
 
       function closeGallery() {
-        modal.classList.remove("opacity-100");
-        modal.classList.add("opacity-0");
+        gallery.classList.remove("is-visible");
         setTimeout(() => {
-          modal.classList.add("hidden");
-          document.body.style.overflow = "auto";
-        }, 300);
+          gallery.classList.remove("is-open");
+          document.body.style.overflow = "";
+        }, 220);
       }
 
-      function changeImage(direction) {
+      function changeImage(step) {
         const images = projectData[currentProject];
-        if (images.length <= 1) return;
-        currentIndex += direction;
-        if (currentIndex >= images.length) {
-          currentIndex = 0;
-        } else if (currentIndex < 0) {
-          currentIndex = images.length - 1;
-        }
-        modalImg.style.opacity = "0.3";
-        modalImg.style.transform = "scale(0.98)";
+        if (!images || images.length <= 1) return;
+        currentIndex = (currentIndex + step + images.length) % images.length;
+        galleryImg.style.opacity = "0.35";
         setTimeout(() => {
           updateModal();
-          modalImg.style.opacity = "1";
-          modalImg.style.transform = "scale(1)";
-        }, 150);
+          galleryImg.style.opacity = "1";
+        }, 140);
       }
 
-      document.addEventListener("keydown", function (e) {
-        if (modal.classList.contains("hidden")) return;
+      function updateModal() {
+        const images = projectData[currentProject] || [];
+        galleryImg.src = images[currentIndex] || "";
+        galleryCount.textContent = `${currentIndex + 1} / ${images.length}`;
+        galleryCount.style.display = images.length > 1 ? "block" : "none";
+      }
+
+      gallery.addEventListener("click", (e) => {
+        if (e.target === gallery) closeGallery();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!gallery.classList.contains("is-open")) return;
         if (e.key === "Escape") closeGallery();
         if (e.key === "ArrowRight") changeImage(1);
         if (e.key === "ArrowLeft") changeImage(-1);
       });
 
-      function updateModal() {
-        const images = projectData[currentProject];
-        modalImg.src = images[currentIndex];
-        if (images.length > 1) {
-          counter.style.display = "block";
-          counter.innerText = `${currentIndex + 1} / ${images.length}`;
-        } else {
-          counter.style.display = "none";
-        }
+      // ==========================================
+      // 5. PORTRAIT SLIDER
+      // ==========================================
+      let profileIndex = 0;
+      const profileSlider = document.getElementById("profile-slider");
+      const profileDots = document.querySelectorAll(".portrait__dots button");
+
+      function showProfile(i) {
+        profileIndex = i;
+        profileSlider.style.transform = `translateX(-${i * 100}%)`;
+        profileDots.forEach((dot, idx) => dot.setAttribute("aria-current", String(idx === i)));
       }
 
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-          closeGallery();
+      // ==========================================
+      // 6. INIT
+      // ==========================================
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        document.documentElement.setAttribute("data-theme", savedTheme === "dark" ? "dark" : "light");
+
+        document.querySelectorAll('[data-i18n="hero_title"]').forEach((el) => (el.dataset.i18nHtml = "true"));
+
+        const savedLang = localStorage.getItem("lang");
+        if (savedLang === "id" || savedLang === "en") {
+          applyLanguage(savedLang);
+        } else {
+          const browserLang = (navigator.language || "en").toLowerCase();
+          applyLanguage(browserLang.startsWith("id") ? "id" : "en");
+        }
+
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 720) closeMenu();
+        });
+
+        // Nav active state
+        const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+        const sections = navLinks
+          .map((a) => document.querySelector(a.getAttribute('href')))
+          .filter(Boolean);
+        if ('IntersectionObserver' in window && sections.length) {
+          const spy = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach((a) =>
+                  a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id)
+                );
+              });
+            },
+            { rootMargin: '-45% 0px -50% 0px' }
+          );
+          sections.forEach((s) => spy.observe(s));
+        }
+
+        // Gentle reveal on scroll
+        const items = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-in");
+                  io.unobserve(entry.target);
+                }
+              });
+            },
+            { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+          );
+          items.forEach((el) => io.observe(el));
+        } else {
+          items.forEach((el) => el.classList.add("is-in"));
         }
       });
-
-      // Profil Foto Slider Header
-      let currentProfileIndex = 0;
-      const totalProfileImages = 2;
-      const profileSlider = document.getElementById("profile-slider");
-      const $dot0 = document.getElementById("dot-0");
-      const $dot1 = document.getElementById("dot-1");
-
-      function updateProfileSlider() {
-        profileSlider.style.transform = `translateX(-${currentProfileIndex * 100}%)`;
-        if (currentProfileIndex === 0) {
-          document.getElementById("dot-0").className =
-            "w-2.5 h-2.5 rounded-full bg-white transition-all shadow-md";
-          document.getElementById("dot-1").className =
-            "w-2.5 h-2.5 rounded-full bg-white/40 transition-all shadow-md";
-        } else {
-          document.getElementById("dot-0").className =
-            "w-2.5 h-2.5 rounded-full bg-white/40 transition-all shadow-md";
-          document.getElementById("dot-1").className =
-            "w-2.5 h-2.5 rounded-full bg-white transition-all shadow-md";
-        }
-      }
-
-      function nextProfileImage() {
-        currentProfileIndex = (currentProfileIndex + 1) % totalProfileImages;
-        updateProfileSlider();
-      }
-
-      function prevProfileImage() {
-        currentProfileIndex =
-          (currentProfileIndex - 1 + totalProfileImages) % totalProfileImages;
-        updateProfileSlider();
-      }
     </script>
   </body>
 </html>

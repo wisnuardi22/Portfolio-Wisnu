@@ -84,3 +84,28 @@ python -m http.server 8000
 - Hero punya 3 tombol sejajar; bisa diringkas jadi 2 kalau mau lebih tegas.
 - Folder `image/` (sumber asli, 9,8 MB) masih disertakan agar skrip optimasi bisa dijalankan
   ulang. Boleh dihapus dari repo kalau tidak diperlukan — situs tidak merujuknya lagi.
+
+---
+
+## Redesign — 19 November 2026
+
+Seluruh tampilan dibangun ulang. Tailwind dibuang, diganti `assets/style.css` (hand-written CSS).
+
+### Yang berubah
+- **Tipografi**: Instrument Serif (judul) + Inter (teks). Skala ukuran konsisten, lebar baris
+  dibatasi (`68ch` untuk bullet pengalaman, `28rem` untuk paragraf pendukung).
+- **Palet**: kertas gading `#faf8f3`, tinta `#17160f`, satu aksen hijau tua `#2c5a4a`.
+  Mode gelap: `#0d0e0c` / `#f0ede4`. Semua lewat token di `:root` dan `[data-theme="dark"]`.
+- **Struktur**: hero dua kolom (teks + foto), strip logo magang, About + tabel fakta,
+  Process 5 langkah, Experience dengan logo & periode, Projects 6 kartu, Certificates 3 kartu,
+  Contact gelap + footer. Section "Skills" lama dilebur ke About.
+- **Navigasi**: penanda bagian aktif (`IntersectionObserver`), menu hamburger < 720px,
+  `scroll-padding-top` supaya judul section tidak tertutup header.
+- **Aksesibilitas**: kontras teks sekunder dinaikkan, target sentuh ikon ≥ 40px di mobile,
+  `skip to content`, `aria-label` pada tombol ikon, dukungan `prefers-reduced-motion`.
+- **Tanpa build step**: hapus `tailwind.config.js`, `src/input.css`, `assets/tailwind.css`.
+  Cukup edit `index.html` / `assets/style.css` lalu push.
+
+### Ukuran
+- `index.html` ± 41 KB, `assets/style.css` ± 14 KB, tanpa JavaScript pihak ketiga.
+- Font Google dimuat dengan `display=swap` dan `preconnect`.
