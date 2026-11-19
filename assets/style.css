@@ -394,12 +394,14 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 
 /* ---------- 13. Contact ---------- */
 .contact {
-  background: var(--ink); color: var(--paper);
+  --c-fg: var(--paper); --c-bg: var(--ink);
+  background: var(--c-bg); color: var(--c-fg);
   padding-block: clamp(3.5rem, 7vw, 6rem);
 }
-[data-theme="dark"] .contact { background: #080907; border-top: 1px solid var(--line); }
+[data-theme="dark"] .contact { --c-fg: var(--ink); --c-bg: #080907; border-top: 1px solid var(--line); }
 .contact a { color: inherit; }
-.contact .btn--invert { color: var(--ink); }
+.contact .btn--invert { background: var(--c-fg); color: var(--c-bg); }
+.contact .btn--invert:hover { background: transparent; color: var(--c-fg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c-fg) 55%, transparent); }
 .contact__grid {
   display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: clamp(2rem, 5vw, 4rem);
@@ -411,49 +413,50 @@ h1, h2, h3, h4, p, figure, blockquote { margin: 0; }
 }
 .contact__mail {
   display: inline-block; font-size: clamp(1rem, 1.6vw, 1.15rem);
-  border-bottom: 1px solid color-mix(in srgb, var(--paper) 35%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--c-fg) 35%, transparent);
   padding-bottom: 3px; transition: border-color 0.2s ease, opacity 0.2s ease;
 }
-.contact__mail:hover { border-color: var(--paper); }
-.contact__note { margin-top: 1.4rem; font-size: 0.85rem; color: color-mix(in srgb, var(--paper) 74%, transparent); max-width: 26rem; }
+.contact__mail:hover { border-color: var(--c-fg); }
+.contact__note { margin-top: 1.4rem; font-size: 0.85rem; color: color-mix(in srgb, var(--c-fg) 74%, transparent); max-width: 26rem; }
 .contact__note--tight { margin-top: 1.2rem; max-width: none; }
-.contact__kicker { color: color-mix(in srgb, var(--paper) 68%, transparent); margin-bottom: 1.2rem; }
-.contact__kicker::before { background: color-mix(in srgb, var(--paper) 45%, transparent); }
+.contact__kicker { color: color-mix(in srgb, var(--c-fg) 68%, transparent); margin-bottom: 1.2rem; }
+.contact__kicker::before { background: color-mix(in srgb, var(--c-fg) 45%, transparent); }
 .contact__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.5rem; margin-top: 1.9rem; }
 
-.btn--invert { background: var(--paper); color: var(--ink); }
-.btn--invert:hover { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--paper) 55%, transparent); }
+.btn--invert { background: var(--c-fg); color: var(--ink); }
+.btn--invert:hover { background: transparent; color: var(--c-fg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c-fg) 55%, transparent); }
 
-.link-arrow--light { color: color-mix(in srgb, var(--paper) 82%, transparent); }
-.link-arrow--light:hover { color: var(--paper); border-color: var(--paper); }
+.link-arrow--light { color: color-mix(in srgb, var(--c-fg) 82%, transparent); }
+.link-arrow--light:hover { color: var(--c-fg); border-color: var(--c-fg); }
 
-.contact__goals { border-top: 1px solid color-mix(in srgb, var(--paper) 18%, transparent); }
+.contact__goals { border-top: 1px solid color-mix(in srgb, var(--c-fg) 18%, transparent); }
 .contact__goals h3 {
   font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: color-mix(in srgb, var(--paper) 55%, transparent);
+  color: color-mix(in srgb, var(--c-fg) 55%, transparent);
   padding-top: 1rem; margin-bottom: 0.9rem;
 }
 .contact__goals li {
   display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.5rem;
   padding-block: 0.7rem; font-size: 0.88rem; line-height: 1.6;
-  color: color-mix(in srgb, var(--paper) 82%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--paper) 12%, transparent);
+  color: color-mix(in srgb, var(--c-fg) 82%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--c-fg) 12%, transparent);
 }
 .contact__goals li span:first-child { font-family: var(--mono); font-size: 0.72rem; opacity: 0.66; padding-top: 0.15rem; }
 
 .site-footer {
-  background: var(--ink); color: color-mix(in srgb, var(--paper) 60%, transparent);
+  --f-fg: var(--paper);
+  background: var(--ink); color: color-mix(in srgb, var(--f-fg) 60%, transparent);
   padding-block: 1.6rem;
-  border-top: 1px solid color-mix(in srgb, var(--paper) 12%, transparent);
+  border-top: 1px solid color-mix(in srgb, var(--f-fg) 12%, transparent);
 }
-[data-theme="dark"] .site-footer { background: #080907; }
+[data-theme="dark"] .site-footer { --f-fg: var(--ink); background: #080907; }
 .site-footer__inner {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
   gap: 0.8rem 1.5rem; font-size: 0.76rem; letter-spacing: 0.01em;
 }
 .site-footer nav { display: flex; gap: 1.2rem; }
 .site-footer a { transition: color 0.2s ease; }
-.site-footer a:hover { color: var(--paper); }
+.site-footer a:hover { color: var(--f-fg); }
 
 /* ---------- 14. Gallery modal ---------- */
 .gallery {
