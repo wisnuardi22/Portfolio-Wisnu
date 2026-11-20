@@ -110,3 +110,20 @@ Seluruh tampilan dibangun ulang. Tailwind dibuang, diganti `assets/style.css` (h
 ### Ukuran
 - `index.html` ± 41 KB, `assets/style.css` ± 14 KB, tanpa JavaScript pihak ketiga.
 - Font Google dimuat dengan `display=swap` dan `preconnect`.
+
+### Perbaikan lanjutan — 19 November 2026 (malam)
+
+- **Kontras mode gelap**: blok Contact dan footer sebelumnya hanya mengganti latar
+  (`#080907`) tanpa ikut mengganti warna teks, sehingga teks `#0d0e0c` di atas `#080907`
+  praktis tidak terbaca. Sekarang pakai token lokal `--c-fg`/`--c-bg` (Contact) dan
+  `--f-fg` (footer) yang ikut berganti per tema. Hasil audit: 0 kegagalan kontras WCAG AA
+  di mode terang maupun gelap.
+- **Header**: nama brand dipaksa satu baris (`white-space: nowrap`) — sebelumnya pecah jadi
+  tiga baris dan membuat header 75px. Header kini grid `1fr auto 1fr` sehingga menu benar
+  di tengah (terukur 712px dari 712.5px pusat viewport), turun ke `1fr auto` di ≤720px.
+- **Sertifikat**: kotak gambar `4/3` diganti `16/9` mengikuti rasio sumber 900×506, jadi
+  tidak ada pita kosong di atas-bawah.
+- **Headline mobile**: `clamp()` di ≤900px dan ≤390px dikecilkan; `scrollWidth` =
+  `innerWidth` di 360px, 390px, dan 1440px.
+- Stylesheet sekarang dirujuk dengan `assets/style.css?v=20261119f` agar CDN Pages tidak
+  menyajikan versi lama.
